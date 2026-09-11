@@ -1,23 +1,5533 @@
 {
   "reasonCodes": [
-    "Weather Related", 
-    "Equipment Breakdown", 
-    "Holiday Closed", 
-    "Warehouse Delay", 
-    "Driver Absence", 
-    "Driver Related", 
-    "Driver Not Available", 
-    "Equip Unavail-Ideal", 
-    "Equipment Issues", 
+    "Driver Absence",
+    "Driver Not Available",
+    "Driver Related",
+    "Equip Unavail-Ideal",
+    "Equip Unavailable",
+    "Equipment Breakdown",
+    "Equipment Issues",
+    "Holiday Closed",
+    "Warehouse Delay",
+    "Weather Related",
     "Other"
   ],
   "recoveryPlans": [
-    "Ryder 1 day delay", 
-    "Ryder 2 day delay", 
-    "Ryder 3 day delay", 
-    "Ryder next regular delivery", 
+    "Ryder 1 day delay",
+    "Ryder 2 day delay",
+    "Ryder 3 day delay",
+    "Ryder next regular delivery",
     "CCN"
   ],
-  "allowedLocations": [],
-  "routesByLocation": {}
+  "allowedLocations": [
+    "Albuquerque",
+    "Anchorage",
+    "Atlanta",
+    "Baltimore",
+    "Boise",
+    "Burnsville",
+    "Butte",
+    "Chester",
+    "Dallas",
+    "Dayton",
+    "Denver",
+    "Fort Lauderdale",
+    "Fresno",
+    "Greensboro",
+    "Hawaii",
+    "Houston",
+    "Jacksonville",
+    "Kansas City",
+    "Mansfield",
+    "Memphis",
+    "Milwaukee",
+    "Mobile",
+    "Nashville",
+    "Ontario",
+    "Phoenix",
+    "New Orleans",
+    "Portland",
+    "Richmond",
+    "Rochester",
+    "Salt Lake City",
+    "San Antonio",
+    "Seattle",
+    "Spokane",
+    "St Louis",
+    "Tampa",
+    "Taylor",
+    "Vacaville",
+    "Westfield",
+    "Wichita"
+  ],
+  "routesByLocation": {
+    "Albuquerque": [
+      {
+        "code": "HB201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HB202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HB203",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HB401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HB402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HB501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HB502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HB801",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HBALB",
+        "activeDays": [
+          "mon",
+          "tue",
+          "wed",
+          "thu",
+          "fri"
+        ]
+      }
+    ],
+    "Anchorage": [
+      {
+        "code": "I62AK",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I63AK",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "I64AK",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "I65AK",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Atlanta": [
+      {
+        "code": "HA101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HA102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HA103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HA104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HA105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HA201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HA202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HA203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HA205",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HA206P",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HA301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HA302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HA304",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HA401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HA402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HA403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HA501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HA502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HA503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HA504",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Baltimore": [
+      {
+        "code": "HM101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HM102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HM103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HM104",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HM105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HM106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HM107",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HM108",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HM109",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HM110",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HM201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HM202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HM203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HM204",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HM205",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HM206",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HM207",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HM301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HM302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HM303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HM304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HM305",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HM401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HM402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HM403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HM404",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HM405",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HM406",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HM407",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HM501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HM502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HM503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HM504",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HM505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HM506",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HM507",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Boise": [
+      {
+        "code": "BP105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "BP105P",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "BP205",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "BP205P",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "BP305",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "BP305P",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "BP405",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "BP405P",
+        "activeDays": [
+          "thu"
+        ]
+      }
+    ],
+    "Burnsville": [
+      {
+        "code": "G2100",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G2105",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G2110",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G2115",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G2120",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G2125",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G2130",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G2135",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G2140",
+        "activeDays": [
+          "mon",
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G2200",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G2205",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G2210",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G2215",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G2220",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G2225",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G2300",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G2305",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G2310",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G2315",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G2320",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G2325",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G2400",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G2405",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G2410",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G2415",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G2420",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G2425",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G2430",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G2435",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G2500",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G2505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G2510",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G2515",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G2520",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G2525",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Butte": [
+      {
+        "code": "JB201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JB202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JB401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JB402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      }
+    ],
+    "Chester": [
+      {
+        "code": "JJ101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JJ105",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JJ107",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JJ108",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JJ109",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JJ110",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JJ111",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ112",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ204",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ205",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ206",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JJ301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ305",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ306",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ307",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ308",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ315",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JJ401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ404",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ405",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ406",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ407",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ408",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ409",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JJ501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ504",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ506",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ507",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ508",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JJ509",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Dallas": [
+      {
+        "code": "HD101",
+        "activeDays": [
+          "mon",
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HD102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HD103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HD104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HD105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HD106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HD107",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HD108",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HD110",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HD201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HD202",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HD203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HD204",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HD205",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HD206",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HD301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HD302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HD303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HD304",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HD401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HD402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HD403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HD404",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HD405",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HD406",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HD501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HD502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HD503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HD504",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HD505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HD506",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HD507",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HD610",
+        "activeDays": [
+          "mon",
+          "thu"
+        ]
+      },
+      {
+        "code": "HD701",
+        "activeDays": [
+          "mon",
+          "fri"
+        ]
+      },
+      {
+        "code": "HDC03",
+        "activeDays": [
+          "mon",
+          "wed"
+        ]
+      }
+    ],
+    "Dayton": [
+      {
+        "code": "G3100",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3110",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3115",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3120",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3125",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3130",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3135",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3140",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3145",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3150",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3155",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3160",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3165",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3170",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G3175",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3180",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3185",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3195",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3196",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3198",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G3200",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G3205",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G3210",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3215",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G3220",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3225",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3230",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3235",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3240",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3245",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3250",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3260",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G3265",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G3285",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G3305",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G3310",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G3315",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G3320",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G3325",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G3330",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G3335",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G3340",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G3345",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G3355",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G3360",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G3365",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G3390",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G3400",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G3410",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3415",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3420",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3425",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3430",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3440",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G3445",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3450",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G3465",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G3470",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3475",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G3480",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G3485",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G3490",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G3500",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3515",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3520",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3525",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3530",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3535",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3545",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3550",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3555",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3560",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3565",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3570",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3580",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G3900",
+        "activeDays": [
+          "tue",
+          "fri"
+        ]
+      }
+    ],
+    "Denver": [
+      {
+        "code": "HE101",
+        "activeDays": [
+          "mon",
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HE102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HE103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HE104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HE201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HE202",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HE203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HE204",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HE301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HE302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HE401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HE402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HE403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HE501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HE502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HE503",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Fort Lauderdale": [
+      {
+        "code": "HO101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HO102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HO103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HO201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HO301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HO302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HO303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HO304",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HO401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HO501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HO502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HO503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HO504",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Fresno": [
+      {
+        "code": "I7101",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I7102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I7201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I7202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I7301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I7302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I7401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I7402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      }
+    ],
+    "Greensboro": [
+      {
+        "code": "JL101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JL102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JL103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JL104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JL105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JL106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JL107",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JL201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JL202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JL203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JL204",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "JL301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JL302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JL303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JL304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JL401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JL402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JL403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JL404",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JL501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JL502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JL503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JL504",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JL505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JL506",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Hawaii": [
+      {
+        "code": "IX201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IX301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IX401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "IX501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IX901",
+        "activeDays": [
+          "tue",
+          "fri"
+        ]
+      },
+      {
+        "code": "IXD01",
+        "activeDays": [
+          "tue",
+          "wed",
+          "fri"
+        ]
+      }
+    ],
+    "Houston": [
+      {
+        "code": "HF101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HF102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HF103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HF104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HF201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HF202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HF203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HF301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HF302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HF303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HF304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HF401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HF403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HF501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HF502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HF503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HF504",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Jacksonville": [
+      {
+        "code": "HP201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HP202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HP203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HP301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HP401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HP402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HP403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HP501",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Kansas City": [
+      {
+        "code": "HI110",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HI111",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HI112",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HI125",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HI132",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HI140",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HI142",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HI180",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HI212",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HI223",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HI230",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HI240",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HI250",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HI260",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HI312",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HI313",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HI332",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HI342",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HI350",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HI352",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HI390",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HI412",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HI413",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HI422",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HI442",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HI470",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HI503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HI520",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HI540",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HI555",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HI580",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HI902",
+        "activeDays": [
+          "tue",
+          "fri"
+        ]
+      },
+      {
+        "code": "HI960",
+        "activeDays": [
+          "tue",
+          "wed",
+          "fri"
+        ]
+      },
+      {
+        "code": "HI980",
+        "activeDays": [
+          "tue",
+          "wed",
+          "fri"
+        ]
+      }
+    ],
+    "Mansfield": [
+      {
+        "code": "HZ101",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HZ102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HZ103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HZ104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HZ105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HZ106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HZ107",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HZ201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HZ202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HZ203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HZ204",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HZ205",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HZ206",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HZ207",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HZ301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HZ302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HZ303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HZ304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HZ401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HZ402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HZ403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HZ404",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HZ501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HZ502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HZ503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HZ504",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HZ505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HZ506",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HZ901",
+        "activeDays": [
+          "tue",
+          "fri"
+        ]
+      }
+    ],
+    "Memphis": [
+      {
+        "code": "IM101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IM102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IM103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IM104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IM201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IM301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IM302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IM303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IM304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IM401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IM402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IM501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IM502",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Milwaukee": [
+      {
+        "code": "G1100",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G1110",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1115",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G1120",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G1125",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G1130",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1135",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1145",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1150",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1160",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G1165",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1170",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1175",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "G1180",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "G1200",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G1205",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G1215",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G1220",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G1222",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G1225",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G1230",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G1235",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G1245",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G1250",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "G1260",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "G1305",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1310",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1315",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G1320",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G1325",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1330",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1335",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "G1340",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1345",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1350",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1355",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1360",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1365",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "G1405",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G1415",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1420",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G1422",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1424",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G1425",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1435",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1440",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1445",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1450",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1455",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1460",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "G1494",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "G1500",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1505",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1510",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1515",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1520",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1525",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1530",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1540",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1545",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1555",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1560",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G1565",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "G171-977",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Mobile": [
+      {
+        "code": "IN201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IN202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "IN203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IN301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IN302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IN401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IN402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IN403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "IN501",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Nashville": [
+      {
+        "code": "I0101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I0102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I0103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I0104",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I0105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I0106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I0107",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I0201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I0202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I0203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I0301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I0302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I0303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I0304",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "I0305",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I0401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I0402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I0403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I0404",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I0501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "I0503",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Ontario": [
+      {
+        "code": "IF101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IF102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IF103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IF104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IF105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IF106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IF107",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IF108",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IF109",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IF201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IF202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "IF203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IF204",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "IF205",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IF210",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IF301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IF302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IF303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IF304",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IF305",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IF306",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IF310",
+        "activeDays": [
+          "wed",
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IF401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IF402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IF403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IF404",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IF501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IF502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IF503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IF504",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Phoenix": [
+      {
+        "code": "IA101",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IA102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IA103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IA104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IA201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "IA202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "IA203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IA204",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IA301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IA302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IA401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IA402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IA403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "IA501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IA502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IA503",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "New Orleans": [
+      {
+        "code": "I1101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I1102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I1103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I1104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I1105",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I1201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I1202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I1203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I1301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I1302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "I1303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I1401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "I1402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I1403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I1404",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "I1501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "I1502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "I1503",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Portland": [
+      {
+        "code": "IB101",
+        "activeDays": [
+          "mon",
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "IB102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IB103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IB104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "IB201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IB202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IB301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IB302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IB303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IB401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IB402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "IB403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "IB404",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "IB501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IB502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IB503",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Richmond": [
+      {
+        "code": "HR201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HR202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HR203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HR204",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HR301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HR401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HR402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HR403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HR405",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HR501",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Rochester": [
+      {
+        "code": "I4201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I4202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I4203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I4301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "I4401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I4402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "I4403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I4501",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Salt Lake City": [
+      {
+        "code": "ID101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "ID102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "ID103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "ID201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "ID202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "ID301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "ID302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "ID402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "ID501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "ID502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "ID902",
+        "activeDays": [
+          "tue",
+          "fri"
+        ]
+      }
+    ],
+    "San Antonio": [
+      {
+        "code": "HG101",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HG102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HG103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HG104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HG105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HG203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HG204",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HG205",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HG301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HG302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HG303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HG305",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HG401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HG402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HG403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HG404",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HG501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HG504",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HG802",
+        "activeDays": [
+          "tue",
+          "thu"
+        ]
+      }
+    ],
+    "Seattle": [
+      {
+        "code": "IG101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IG102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "IG201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IG202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IG301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IG302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IG303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "IG401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IG401P",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IG501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "IG502",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Spokane": [
+      {
+        "code": "IJ201",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "IJ202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "IJ301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "IJ401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "IJ402",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "IJ501",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "St Louis": [
+      {
+        "code": "HJ101",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HJ102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HJ103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HJ104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HJ105",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HJ106",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HJ107",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HJ201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HJ202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HJ203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HJ204",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HJ205",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HJ301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HJ303",
+        "activeDays": [
+          "wed",
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HJ401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ404",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ405",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ406",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ407",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HJ408",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      }
+    ],
+    "Tampa": [
+      {
+        "code": "I5101",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I5102",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I5103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I5104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I5105",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I5106",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I5107",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "I5108",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "I5201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I5202",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I5203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I5204",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I5205",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "I5206",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "I5301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I5302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I5303",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I5304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "I5401",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I5402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I5403",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I5404",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "I5501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "I5502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "I5503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "I5504",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Taylor": [
+      {
+        "code": "T3113",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "T3123",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "T3133",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "T3143",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "T3153",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "T3163",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "T3203",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "T3213",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "T3233",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "T3243",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "T3303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "T3313",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "T3383",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "T3403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "T3413",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "T3423",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "T3433",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "T3463",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "T3483",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "T3503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "T3523",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "T3533",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "T3543",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "T3563",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Vacaville": [
+      {
+        "code": "JN101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JN102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JN103",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JN104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JN105",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JN106",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "JN107",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "JN201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JN202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JN203",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JN204",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "JN301",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JN302",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JN303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JN304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JN305",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JN306",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "JN307",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JN308",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "JN401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JN402",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JN403",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JN404",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JN405",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "JN406",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "JN501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JN502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JN503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "JN504",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Westfield": [
+      {
+        "code": "HY101",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HY102",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HY103",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HY104",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HY201",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HY202",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HY301",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HY302",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HY303",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HY304",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HY401",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HY501",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HY502",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HY503",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HY504",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ],
+    "Wichita": [
+      {
+        "code": "HK110",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK111",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK111P",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK112",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK112P",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK113",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK113P",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK114",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK115",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK115P",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK116",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK116P",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK117",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK117P",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK118",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK118P",
+        "activeDays": [
+          "mon",
+          "tue"
+        ]
+      },
+      {
+        "code": "HK119",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK119P",
+        "activeDays": [
+          "mon"
+        ]
+      },
+      {
+        "code": "HK220",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HK221",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HK222",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HK225",
+        "activeDays": [
+          "tue",
+          "wed"
+        ]
+      },
+      {
+        "code": "HK229",
+        "activeDays": [
+          "tue"
+        ]
+      },
+      {
+        "code": "HK320",
+        "activeDays": [
+          "tue",
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HK321",
+        "activeDays": [
+          "wed",
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HK333",
+        "activeDays": [
+          "wed",
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HK334",
+        "activeDays": [
+          "wed"
+        ]
+      },
+      {
+        "code": "HK335",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HK336",
+        "activeDays": [
+          "wed",
+          "thu"
+        ]
+      },
+      {
+        "code": "HK337",
+        "activeDays": [
+          "wed",
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HK433",
+        "activeDays": [
+          "wed",
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HK443",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HK447",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HK449",
+        "activeDays": [
+          "thu"
+        ]
+      },
+      {
+        "code": "HK453",
+        "activeDays": [
+          "thu",
+          "fri"
+        ]
+      },
+      {
+        "code": "HK550",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HK553",
+        "activeDays": [
+          "fri"
+        ]
+      },
+      {
+        "code": "HK556",
+        "activeDays": [
+          "fri"
+        ]
+      }
+    ]
+  }
 }
