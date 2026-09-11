@@ -762,7 +762,6 @@
         return;
       }
 
-      // Clean up filename reserved characters while retaining spaces and hyphens
       const cleanLoc = selectedLocation.replace(/[/\\?%*:|"<>]/g, '').trim();
       const cleanWeek = selectedWeek.replace(/[/\\?%*:|"<>]/g, '').trim();
       const fileName = `Route Status - ${cleanLoc} - ${cleanWeek}.xls`;
@@ -787,16 +786,15 @@
           <![endif]-->
           <style>
             body { font-family: Arial, sans-serif; font-size: 10pt; }
-            td, th { white-space: nowrap; padding: 6px 12px; }
-            .meta-label { font-weight: bold; background-color: #e2e8f0; text-align: left; white-space: nowrap; }
-            .meta-val { text-align: left; white-space: nowrap; }
-            th { background-color: #1f3d63; color: #ffffff; font-weight: bold; text-align: center; border: 0.5pt solid #152b47; white-space: nowrap; }
-            th.weekday { background-color: #365f91; }
-            td { border: 0.5pt solid #cbd5e1; text-align: center; vertical-align: middle; white-space: nowrap; }
-            td.route-cell { background-color: #f1f5f9; font-weight: bold; text-align: left; }
-            td.inactive-cell { background-color: #e9ecef; }
-            td.status-covered { background-color: #d4edda; color: #155724; font-weight: bold; }
-            td.status-down { background-color: #fee2e2; color: #991b1b; font-weight: bold; }
+            td, th { white-space: nowrap; padding: 6px 12px; border: 0.5pt solid #000000; }
+            .meta-label { font-weight: bold; background-color: #ffffff; text-align: left; white-space: nowrap; border: 0.5pt solid #000000; }
+            .meta-val { text-align: left; white-space: nowrap; border: 0.5pt solid #000000; }
+            th { background-color: #1b365d; color: #ffffff; font-weight: bold; text-align: center; border: 0.5pt solid #000000; white-space: nowrap; }
+            td { border: 0.5pt solid #000000; text-align: center; vertical-align: middle; white-space: nowrap; }
+            td.route-cell { background-color: #ffffff; font-weight: bold; text-align: left; border: 0.5pt solid #000000; }
+            td.inactive-cell { background-color: #e2e8f0; border: 0.5pt solid #000000; }
+            td.status-covered { background-color: #d4edda; color: #155724; font-weight: bold; border: 0.5pt solid #000000; }
+            td.status-down { background-color: #fee2e2; color: #991b1b; font-weight: bold; border: 0.5pt solid #000000; }
           </style>
         </head>
         <body>
@@ -809,11 +807,11 @@
             <thead>
               <tr>
                 <th>Route Code</th>
-                <th class="weekday">Monday</th>
-                <th class="weekday">Tuesday</th>
-                <th class="weekday">Wednesday</th>
-                <th class="weekday">Thursday</th>
-                <th class="weekday">Friday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
                 <th>Reason Code</th>
                 <th>Recovery Plan</th>
                 <th>Reschedule Date</th>
