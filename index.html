@@ -667,7 +667,6 @@
       const form = document.getElementById('routeForm');
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
-      const originalText = submitBtn.innerText;
       submitBtn.innerText = "Submitting...";
 
       showLoading("Saving submission...");
@@ -707,9 +706,38 @@
         body: formData
       })
       .then(() => {
+        // 1. UPDATE LIVE JAVASCRIPT MEMORY INSTANTLY
+        const subKey = (payload.location + '_' + payload.week).toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!existingSubmissions[subKey]) {
+          existingSubmissions[subKey] = {
+            reporterName: payload.reporterName,
+            records: {}
+          };
+        } else {
+          existingSubmissions[subKey].reporterName = payload.reporterName;
+        }
+
+        payload.routes.forEach(r => {
+          days.forEach(day => {
+            const fullDay = day === 'mon' ? 'monday' : day === 'tue' ? 'tuesday' : day === 'wed' ? 'wednesday' : day === 'thu' ? 'thursday' : 'friday';
+            if (r[fullDay]) {
+              const recKey = r.routeCode.toLowerCase().replace(/[^a-z0-9]/g, '') + '_' + day;
+              existingSubmissions[subKey].records[recKey] = {
+                status: r[fullDay],
+                reasonCode: r.reasonCode,
+                recoveryPlan: r.recoveryPlan,
+                rescheduleDate: r.rescheduleDate,
+                comments: r.comments
+              };
+            }
+          });
+        });
+
+        // 2. INSTANTLY SWITCH BUTTON TO RESUBMIT
+        updateSubmitButtonState(true);
+
         hideLoading();
         submitBtn.disabled = false;
-        submitBtn.innerText = originalText;
         showAlert(
           "Submission Successful!\n\n<strong>NOTE:</strong> New submissions may take 1-2 minutes to reflect on the form if refreshed.",
           "Success",
@@ -719,9 +747,62 @@
       .catch(err => {
         hideLoading();
         submitBtn.disabled = false;
-        submitBtn.innerText = originalText;
+        updateSubmitButtonState(hasExistingSubmission);
         showAlert("Submission failed: " + err.message, "Submission Error");
       });
+    }
+
+    function exportToCSV() {
+      const selectedLocation = document.getElementById('location').value;
+      const selectedWeek = document.getElementById('week').value;
+      const reporterVal = document.getElementById('reporter').value.trim();
+      const form = document.getElementById('routeForm');
+
+      if (!selectedLocation || activeRoutes.length === 0) {
+        showAlert("No routes available to export.", "Export Warning");
+        return;
+      }
+
+      let csvRows = [];
+      csvRows.push(["Reporter Name", "Location", "Customer", "Week", "Route Code", "Day", "Status", "Reason Code", "Recovery Plan", "Reschedule Date", "Comments"]);
+
+      activeRoutes.forEach((r, idx) => {
+        days.forEach(day => {
+          if (r.activeDays && r.activeDays.includes(day)) {
+            const statusVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : 'Covered';
+            const reasonVal = form[`reason_${idx}`] ? form[`reason_${idx}`].value : '';
+            const recoveryVal = form[`recoveryPlan_${idx}`] ? form[`recoveryPlan_${idx}`].value : '';
+            const rescheduleVal = form[`reschedule_${idx}`] ? form[`reschedule_${idx}`].value : '';
+            const commentsVal = form[`comments_${idx}`] ? form[`comments_${idx}`].value : '';
+
+            const dayFull = day.charAt(0).toUpperCase() + day.slice(1);
+
+            csvRows.push([
+              `"${reporterVal}"`,
+              `"${selectedLocation}"`,
+              `"Hill's Pet Nutrition"`,
+              `"${selectedWeek}"`,
+              `"${r.code}"`,
+              `"${dayFull}"`,
+              `"${statusVal}"`,
+              `"${reasonVal}"`,
+              `"${recoveryVal}"`,
+              `"${rescheduleVal}"`,
+              `"${commentsVal.replace(/"/g, '""')}"`
+            ]);
+          }
+        });
+      });
+
+      const csvString = csvRows.map(e => e.join(",")).join("\n");
+      const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", `Route_Status_${selectedLocation.replace(/[^a-z0-9]/gi, '_')}_${selectedWeek.replace(/[^a-z0-9]/gi, '_')}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   </script>
 </body>
