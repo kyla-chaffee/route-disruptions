@@ -20,48 +20,48 @@
     "CCN"
   ],
   "allowedLocations": [
-    "Albuquerque",
-    "Anchorage",
-    "Atlanta",
-    "Baltimore",
-    "Boise",
-    "Burnsville",
-    "Butte",
-    "Chester",
-    "Dallas",
-    "Dayton",
-    "Denver",
-    "Fort Lauderdale",
-    "Fresno",
-    "Greensboro",
-    "Hawaii",
-    "Houston",
-    "Jacksonville",
-    "Kansas City",
-    "Mansfield",
-    "Memphis",
-    "Milwaukee",
-    "Mobile",
-    "Nashville",
-    "Ontario",
-    "Phoenix",
-    "New Orleans",
-    "Portland",
-    "Richmond",
-    "Rochester",
-    "Salt Lake City",
-    "San Antonio",
-    "Seattle",
-    "Spokane",
-    "St Louis",
-    "Tampa",
-    "Taylor",
-    "Vacaville",
-    "Westfield",
-    "Wichita"
+    "USHB - Albuquerque",
+    "USI6 - Anchorage",
+    "USHA - Atlanta",
+    "USHM - Baltimore",
+    "USBP - Boise",
+    "USG2 - Burnsville",
+    "USJB - Butte",
+    "USIJJ - Chester",
+    "USHD - Dallas",
+    "USG3 - Dayton",
+    "USHE - Denver",
+    "USHO - Fort Lauderdale",
+    "USI7 - Fresno",
+    "USJL - Greensboro",
+    "USIX - Hawaii",
+    "USHF - Houston",
+    "USHP - Jacksonville",
+    "USLK - Kansas City",
+    "USHZ - Mansfield",
+    "USIM - Memphis",
+    "USG1 - Milwaukee",
+    "USIN - Mobile",
+    "USI0 - Nashville",
+    "USIF - Ontario",
+    "USIA - Phoenix",
+    "USI1 - New Orleans",
+    "USIB - Portland",
+    "USI3 - Richmond",
+    "USI4 - Rochester",
+    "USID - Salt Lake City",
+    "USHG - San Antonio",
+    "USIG - Seattle",
+    "USIJ - Spokane",
+    "USHJ - St Louis",
+    "USI5 - Tampa",
+    "T3 - Taylor",
+    "USJN - Vacaville",
+    "USHY - Westfield",
+    "USHK - Wichita"
   ],
   "routesByLocation": {
-    "Albuquerque": [
+    "USHB - Albuquerque": [
       {
         "code": "HB201",
         "activeDays": [
@@ -129,7 +129,7 @@
         ]
       }
     ],
-    "Anchorage": [
+    "USI6 - Anchorage": [
       {
         "code": "I62AK",
         "activeDays": [
@@ -155,7 +155,7 @@
         ]
       }
     ],
-    "Atlanta": [
+    "USHA - Atlanta": [
       {
         "code": "HA101",
         "activeDays": [
@@ -283,7 +283,7 @@
         ]
       }
     ],
-    "Baltimore": [
+    "USHM - Baltimore": [
       {
         "code": "HM101",
         "activeDays": [
@@ -515,7 +515,7 @@
         ]
       }
     ],
-    "Boise": [
+    "USBP - Boise": [
       {
         "code": "BP105",
         "activeDays": [
@@ -565,7 +565,7 @@
         ]
       }
     ],
-    "Burnsville": [
+    "USG2 - Burnsville": [
       {
         "code": "G2100",
         "activeDays": [
@@ -794,7 +794,7 @@
         ]
       }
     ],
-    "Butte": [
+    "USJB - Butte": [
       {
         "code": "JB201",
         "activeDays": [
@@ -824,7 +824,7 @@
         ]
       }
     ],
-    "Chester": [
+    "USIJJ - Chester": [
       {
         "code": "JJ101",
         "activeDays": [
@@ -1111,7 +1111,7 @@
         ]
       }
     ],
-    "Dallas": [
+    "USHD - Dallas": [
       {
         "code": "HD101",
         "activeDays": [
@@ -1339,7 +1339,7 @@
         ]
       }
     ],
-    "Dayton": [
+    "USG3 - Dayton": [
       {
         "code": "G3100",
         "activeDays": [
@@ -1842,7 +1842,7 @@
         ]
       }
     ],
-    "Denver": [
+    "USHE - Denver": [
       {
         "code": "HE101",
         "activeDays": [
@@ -1948,7 +1948,7 @@
         ]
       }
     ],
-    "Fort Lauderdale": [
+    "USHO - Fort Lauderdale": [
       {
         "code": "HO101",
         "activeDays": [
@@ -2032,7 +2032,7 @@
         ]
       }
     ],
-    "Fresno": [
+    "USI7 - Fresno": [
       {
         "code": "I7101",
         "activeDays": [
@@ -2086,7 +2086,7 @@
         ]
       }
     ],
-    "Greensboro": [
+    "USJL - Greensboro": [
       {
         "code": "JL101",
         "activeDays": [
@@ -2248,7 +2248,7 @@
         ]
       }
     ],
-    "Hawaii": [
+    "USIX - Hawaii": [
       {
         "code": "IX201",
         "activeDays": [
@@ -2289,7 +2289,7 @@
         ]
       }
     ],
-    "Houston": [
+    "USHF - Houston": [
       {
         "code": "HF101",
         "activeDays": [
@@ -2396,7 +2396,7 @@
         ]
       }
     ],
-    "Jacksonville": [
+    "USHP - Jacksonville": [
       {
         "code": "HP201",
         "activeDays": [
@@ -2450,7 +2450,7 @@
         ]
       }
     ],
-    "Kansas City": [
+    "USLK - Kansas City": [
       {
         "code": "HI110",
         "activeDays": [
@@ -2674,7 +2674,7 @@
         ]
       }
     ],
-    "Mansfield": [
+    "USHZ - Mansfield": [
       {
         "code": "HZ101",
         "activeDays": [
@@ -2857,7 +2857,7 @@
         ]
       }
     ],
-    "Memphis": [
+    "USIM - Memphis": [
       {
         "code": "IM101",
         "activeDays": [
@@ -2944,7 +2944,7 @@
         ]
       }
     ],
-    "Milwaukee": [
+    "USG1 - Milwaukee": [
       {
         "code": "G1100",
         "activeDays": [
@@ -3347,7 +3347,7 @@
         ]
       }
     ],
-    "Mobile": [
+    "USIN - Mobile": [
       {
         "code": "IN201",
         "activeDays": [
@@ -3406,7 +3406,7 @@
         ]
       }
     ],
-    "Nashville": [
+    "USI0 - Nashville": [
       {
         "code": "I0101",
         "activeDays": [
@@ -3549,7 +3549,7 @@
         ]
       }
     ],
-    "Ontario": [
+    "USIF - Ontario": [
       {
         "code": "IF101",
         "activeDays": [
@@ -3749,7 +3749,7 @@
         ]
       }
     ],
-    "Phoenix": [
+    "USIA - Phoenix": [
       {
         "code": "IA101",
         "activeDays": [
@@ -3851,7 +3851,7 @@
         ]
       }
     ],
-    "New Orleans": [
+    "USI1 - New Orleans": [
       {
         "code": "I1101",
         "activeDays": [
@@ -3969,7 +3969,7 @@
         ]
       }
     ],
-    "Portland": [
+    "USIB - Portland": [
       {
         "code": "IB101",
         "activeDays": [
@@ -4071,7 +4071,7 @@
         ]
       }
     ],
-    "Richmond": [
+    "USI3 - Richmond": [
       {
         "code": "HR201",
         "activeDays": [
@@ -4139,7 +4139,7 @@
         ]
       }
     ],
-    "Rochester": [
+    "USI4 - Rochester": [
       {
         "code": "I4201",
         "activeDays": [
@@ -4193,7 +4193,7 @@
         ]
       }
     ],
-    "Salt Lake City": [
+    "USID - Salt Lake City": [
       {
         "code": "ID101",
         "activeDays": [
@@ -4267,7 +4267,7 @@
         ]
       }
     ],
-    "San Antonio": [
+    "USHG - San Antonio": [
       {
         "code": "HG101",
         "activeDays": [
@@ -4390,7 +4390,7 @@
         ]
       }
     ],
-    "Seattle": [
+    "USIG - Seattle": [
       {
         "code": "IG101",
         "activeDays": [
@@ -4465,7 +4465,7 @@
         ]
       }
     ],
-    "Spokane": [
+    "USIJ - Spokane": [
       {
         "code": "IJ201",
         "activeDays": [
@@ -4505,7 +4505,7 @@
         ]
       }
     ],
-    "St Louis": [
+    "USHJ - St Louis": [
       {
         "code": "HJ101",
         "activeDays": [
@@ -4663,7 +4663,7 @@
         ]
       }
     ],
-    "Tampa": [
+    "USI5 - Tampa": [
       {
         "code": "I5101",
         "activeDays": [
@@ -4835,7 +4835,7 @@
         ]
       }
     ],
-    "Taylor": [
+    "T3 - Taylor": [
       {
         "code": "T3113",
         "activeDays": [
@@ -4989,7 +4989,7 @@
         ]
       }
     ],
-    "Vacaville": [
+    "USJN - Vacaville": [
       {
         "code": "JN101",
         "activeDays": [
@@ -5174,7 +5174,7 @@
         ]
       }
     ],
-    "Westfield": [
+    "USHY - Westfield": [
       {
         "code": "HY101",
         "activeDays": [
@@ -5271,7 +5271,7 @@
         ]
       }
     ],
-    "Wichita": [
+    "USHK - Wichita": [
       {
         "code": "HK110",
         "activeDays": [
@@ -5528,6 +5528,15 @@
           "fri"
         ]
       }
+    ]
+  },
+  "emailLocations": {
+    "kyla_chaffee@hillspet.com": [
+      "USI6 - Anchorage",
+      "USHA - Atlanta"
+    ],
+    "kylachaffee@gmail.com": [
+      "USIG - Seattle"
     ]
   }
 }
