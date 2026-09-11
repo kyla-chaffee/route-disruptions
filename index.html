@@ -134,10 +134,10 @@
     }
     .btn-submit:hover { background-color: #166534; }
     .btn-resubmit {
-      background-color: #ef4444; color: #ffffff; padding: 9px 24px; border: none; border-radius: 4px; 
+      background-color: #991b1b; color: #ffffff; padding: 9px 24px; border: none; border-radius: 4px; 
       font-weight: 700; cursor: pointer; font-size: 12px;
     }
-    .btn-resubmit:hover { background-color: #dc2626; }
+    .btn-resubmit:hover { background-color: #7f1d1d; }
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -156,13 +156,14 @@
       border: 1px solid #94a3b8;
       overflow: hidden;
     }
-    .modal-header { background: #b91c1c; color: #ffffff; padding: 10px 14px; font-weight: 700; font-size: 13px; }
+    .modal-header { background: #991b1b; color: #ffffff; padding: 10px 14px; font-weight: 700; font-size: 13px; }
     .modal-header.success { background: #15803d; }
-    .modal-header.warning { background: #b91c1c; }
+    .modal-header.warning { background: #991b1b; }
     .modal-body { padding: 16px; font-size: 12px; color: #0f172a; line-height: 1.5; font-weight: 600; }
     .modal-footer { padding: 10px 14px; text-align: right; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end; gap: 8px; }
     .btn-modal-close { background: #1f3d63; color: #ffffff; border: none; padding: 7px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
-    .btn-modal-confirm { background: #dc2626; color: #ffffff; border: none; padding: 7px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+    .btn-modal-confirm { background: #991b1b; color: #ffffff; border: none; padding: 7px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+    .btn-modal-confirm:hover { background-color: #7f1d1d; }
     .btn-modal-cancel { background: #64748b; color: #ffffff; border: none; padding: 7px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
     .spinner {
       border: 4px solid #cbd5e1;
@@ -360,7 +361,7 @@
         const opt = document.createElement('option');
         opt.value = weekStr;
         opt.textContent = weekStr;
-        if (i === 0) opt.selected = true;
+        if (i === 1) opt.selected = true; // Auto-select NEXT week by default
         weekSelect.appendChild(opt);
       }
     }
@@ -653,7 +654,7 @@
         const selLocation = document.getElementById('location').value;
         const selWeek = document.getElementById('week').value;
         showConfirmModal(
-          `An existing submission already exists for <strong>${selLocation}</strong> (${selWeek}).\n\nAre you sure you want to overwrite it?`,
+          `An existing submission already exists for <strong>${selLocation}</strong> for <strong>${selWeek}</strong>.<br><br>Are you sure you want to overwrite it?`,
           "Existing Submission Warning",
           executeSubmission
         );
@@ -710,7 +711,7 @@
         submitBtn.disabled = false;
         submitBtn.innerText = originalText;
         showAlert(
-          "Submission Successful!\n\nNOTE: New submissions may take 1-2 minutes to reflect on the form if refreshed.",
+          "Submission Successful!\n\n<strong>NOTE:</strong> New submissions may take 1-2 minutes to reflect on the form if refreshed.",
           "Success",
           true
         );
