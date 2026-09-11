@@ -5541,39 +5541,6 @@
     ]
   },
   "existingSubmissions": {
-    "usi6anchorageweek37sep7sep11": {
-      "reporterName": "Kyla Chaffee",
-      "records": {
-        "i62ak_tue": {
-          "status": "Down",
-          "reasonCode": "Driver Related",
-          "recoveryPlan": "Ryder 1 day delay",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "i63ak_wed": {
-          "status": "Down",
-          "reasonCode": "Equip Unavail-Ideal",
-          "recoveryPlan": "Ryder next regular delivery",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "i64ak_thu": {
-          "status": "Down",
-          "reasonCode": "Equip Unavailable",
-          "recoveryPlan": "Ryder 2 day delay",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "i65ak_fri": {
-          "status": "Down",
-          "reasonCode": "Equipment Breakdown",
-          "recoveryPlan": "Ryder 2 day delay",
-          "rescheduleDate": "",
-          "comments": ""
-        }
-      }
-    },
     "usi6anchorageweek36aug31sep4": {
       "reporterName": "Kyla Chaffee",
       "records": {
@@ -5819,6 +5786,39 @@
         "i65ak_fri": {
           "status": "Down",
           "reasonCode": "Driver Not Available",
+          "recoveryPlan": "Ryder 2 day delay",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
+    },
+    "usi6anchorageweek37sep7sep11": {
+      "reporterName": "Kyla Chaffee",
+      "records": {
+        "i62ak_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i63ak_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i64ak_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i65ak_fri": {
+          "status": "Down",
+          "reasonCode": "Equipment Breakdown",
           "recoveryPlan": "Ryder 2 day delay",
           "rescheduleDate": "",
           "comments": ""
