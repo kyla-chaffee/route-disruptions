@@ -5730,30 +5730,30 @@
       "reporterName": "Kyla Chaffee",
       "records": {
         "i62ak_tue": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Driver Not Available",
+          "recoveryPlan": "Ryder 3 day delay",
           "rescheduleDate": "",
           "comments": ""
         },
         "i63ak_wed": {
           "status": "Down",
           "reasonCode": "Driver Related",
-          "recoveryPlan": "Ryder next regular delivery",
+          "recoveryPlan": "Ryder 3 day delay",
           "rescheduleDate": "",
-          "comments": "rr"
+          "comments": ""
         },
         "i64ak_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Driver Not Available",
+          "recoveryPlan": "Ryder 2 day delay",
           "rescheduleDate": "",
           "comments": ""
         },
         "i65ak_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Equipment Breakdown",
+          "recoveryPlan": "Ryder 3 day delay",
           "rescheduleDate": "",
           "comments": ""
         }
