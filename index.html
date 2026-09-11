@@ -762,16 +762,37 @@
         return;
       }
 
+      // Clean up filename reserved characters while retaining spaces and hyphens
+      const cleanLoc = selectedLocation.replace(/[/\\?%*:|"<>]/g, '').trim();
+      const cleanWeek = selectedWeek.replace(/[/\\?%*:|"<>]/g, '').trim();
+      const fileName = `Route Status - ${cleanLoc} - ${cleanWeek}.xls`;
+
       let excelHtml = `
         <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
         <head>
           <meta charset="utf-8">
+          <!--[if gte mso 9]>
+          <xml>
+           <x:ExcelWorkbook>
+            <x:ExcelWorksheets>
+             <x:ExcelWorksheet>
+              <x:Name>Route Status</x:Name>
+              <x:WorksheetOptions>
+               <x:DisplayGridlines/>
+              </x:WorksheetOptions>
+             </x:ExcelWorksheet>
+            </x:ExcelWorksheets>
+           </x:ExcelWorkbook>
+          </xml>
+          <![endif]-->
           <style>
             body { font-family: Arial, sans-serif; font-size: 10pt; }
-            .meta-label { font-weight: bold; background-color: #e2e8f0; }
-            th { background-color: #1f3d63; color: #ffffff; font-weight: bold; text-align: center; border: 0.5pt solid #152b47; }
+            td, th { white-space: nowrap; padding: 6px 12px; }
+            .meta-label { font-weight: bold; background-color: #e2e8f0; text-align: left; white-space: nowrap; }
+            .meta-val { text-align: left; white-space: nowrap; }
+            th { background-color: #1f3d63; color: #ffffff; font-weight: bold; text-align: center; border: 0.5pt solid #152b47; white-space: nowrap; }
             th.weekday { background-color: #365f91; }
-            td { border: 0.5pt solid #cbd5e1; text-align: center; vertical-align: middle; }
+            td { border: 0.5pt solid #cbd5e1; text-align: center; vertical-align: middle; white-space: nowrap; }
             td.route-cell { background-color: #f1f5f9; font-weight: bold; text-align: left; }
             td.inactive-cell { background-color: #e9ecef; }
             td.status-covered { background-color: #d4edda; color: #155724; font-weight: bold; }
@@ -780,23 +801,23 @@
         </head>
         <body>
           <table>
-            <tr><td class="meta-label">Reporter Name:</td><td colspan="3">${reporterVal}</td></tr>
-            <tr><td class="meta-label">Location:</td><td colspan="3">${selectedLocation}</td></tr>
-            <tr><td class="meta-label">Customer:</td><td colspan="3">${customerVal}</td></tr>
-            <tr><td class="meta-label">Week:</td><td colspan="3">${selectedWeek}</td></tr>
+            <tr><td class="meta-label">Reporter Name:</td><td class="meta-val" colspan="3">${reporterVal}</td></tr>
+            <tr><td class="meta-label">Location:</td><td class="meta-val" colspan="3">${selectedLocation}</td></tr>
+            <tr><td class="meta-label">Customer:</td><td class="meta-val" colspan="3">${customerVal}</td></tr>
+            <tr><td class="meta-label">Week:</td><td class="meta-val" colspan="3">${selectedWeek}</td></tr>
             <tr></tr>
             <thead>
               <tr>
-                <th style="width: 120px;">Route Code</th>
-                <th class="weekday" style="width: 90px;">Monday</th>
-                <th class="weekday" style="width: 90px;">Tuesday</th>
-                <th class="weekday" style="width: 90px;">Wednesday</th>
-                <th class="weekday" style="width: 90px;">Thursday</th>
-                <th class="weekday" style="width: 90px;">Friday</th>
-                <th style="width: 130px;">Reason Code</th>
-                <th style="width: 130px;">Recovery Plan</th>
-                <th style="width: 110px;">Reschedule Date</th>
-                <th style="width: 150px;">Comments</th>
+                <th>Route Code</th>
+                <th class="weekday">Monday</th>
+                <th class="weekday">Tuesday</th>
+                <th class="weekday">Wednesday</th>
+                <th class="weekday">Thursday</th>
+                <th class="weekday">Friday</th>
+                <th>Reason Code</th>
+                <th>Recovery Plan</th>
+                <th>Reschedule Date</th>
+                <th>Comments</th>
               </tr>
             </thead>
             <tbody>
@@ -811,7 +832,7 @@
             const cssClass = dayVal === 'Covered' ? 'status-covered' : 'status-down';
             excelHtml += `<td class="${cssClass}">${dayVal}</td>`;
           } else {
-            excelHtml += `<td class="inactive-cell">N/A</td>`;
+            excelHtml += `<td class="inactive-cell"></td>`;
           }
         });
 
@@ -839,7 +860,7 @@
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `Route_Status_${selectedLocation.replace(/[^a-z0-9]/gi, '_')}_${selectedWeek.replace(/[^a-z0-9]/gi, '_')}.xls`;
+      link.download = fileName;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
