@@ -1,0 +1,23 @@
+{
+  "reasonCodes": [
+    "Weather Related", 
+    "Equipment Breakdown", 
+    "Holiday Closed", 
+    "Warehouse Delay", 
+    "Driver Absence", 
+    "Driver Related", 
+    "Driver Not Available", 
+    "Equip Unavail-Ideal", 
+    "Equipment Issues", 
+    "Other"
+  ],
+  "recoveryPlans": [
+    "Ryder 1 day delay", 
+    "Ryder 2 day delay", 
+    "Ryder 3 day delay", 
+    "Ryder next regular delivery", 
+    "CCN"
+  ],
+  "allowedLocations": [],
+  "routesByLocation": {}
+}
