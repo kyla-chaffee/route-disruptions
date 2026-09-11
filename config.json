@@ -6543,16 +6543,16 @@
           "comments": ""
         },
         "hb801_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Holiday Closed",
+          "recoveryPlan": "Ryder next regular delivery",
           "rescheduleDate": "",
           "comments": ""
         },
         "hb801_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Holiday Closed",
+          "recoveryPlan": "Ryder next regular delivery",
           "rescheduleDate": "",
           "comments": ""
         },
