@@ -29,13 +29,6 @@
       margin-bottom: 16px;
       padding-bottom: 8px;
       border-bottom: 3px solid #1f3d63;
-      display: flex;
-      align-items: center;
-    }
-    .app-title-icon {
-      margin-right: 10px;
-      color: #1f3d63;
-      flex-shrink: 0;
     }
     .instructions-banner {
       background-color: #fef2f2;
@@ -107,13 +100,13 @@
       background-color: #d4edda !important;
       color: #155724 !important;
       font-weight: 700;
-      border: 1px solid #c3e6cb !important;
+      border: 2px solid #155724 !important;
     }
     .status-down {
       background-color: #fee2e2 !important;
       color: #991b1b !important;
       font-weight: 700;
-      border: 1px solid #f87171 !important;
+      border: 2px solid #b91c1c !important;
     }
     option.opt-covered { background-color: #d4edda !important; color: #155724 !important; font-weight: 700; }
     option.opt-down { background-color: #fee2e2 !important; color: #991b1b !important; font-weight: 700; }
@@ -178,10 +171,6 @@
 
   <div class="app-container">
     <div class="app-title">
-      <svg class="app-title-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/>
-        <circle cx="12" cy="10" r="3"/>
-      </svg>
       Route Status Entry
     </div>
 
@@ -277,6 +266,7 @@
     let currentUserEmail = '';
     let reasonCodesList = [];
     let recoveryPlansList = [];
+    let existingSubmissions = {};
 
     const urlParams = new URLSearchParams(window.location.search);
     const urlEmail = urlParams.get('email') || '';
@@ -364,6 +354,7 @@
       reasonCodesList = data.reasonCodes || [];
       recoveryPlansList = data.recoveryPlans || [];
       locationMap = data.routesByLocation || {};
+      existingSubmissions = data.existingSubmissions || {};
       const emailLocations = data.emailLocations || {};
 
       if (urlEmail && !document.getElementById('reporter').value) {
@@ -416,6 +407,7 @@
     }
 
     document.getElementById('location').addEventListener('change', renderGrid);
+    document.getElementById('week').addEventListener('change', renderGrid);
 
     function updateSelectColorAndState(selectElement, idx) {
       selectElement.classList.remove('status-covered', 'status-down');
@@ -459,8 +451,18 @@
       }
     }
 
+    function buildOptionsHtml(list, selectedVal) {
+      let html = '<option value=""></option>';
+      list.forEach(item => {
+        const sel = (selectedVal && item.toLowerCase() === selectedVal.toLowerCase()) ? 'selected' : '';
+        html += `<option value="${item}" ${sel}>${item}</option>`;
+      });
+      return html;
+    }
+
     function renderGrid() {
       const selectedLocation = document.getElementById('location').value;
+      const selectedWeek = document.getElementById('week').value;
       const tbody = document.getElementById('gridBody');
       tbody.innerHTML = '';
 
@@ -472,25 +474,52 @@
         return;
       }
 
+      const subKey = (selectedLocation + '_' + selectedWeek).toLowerCase().replace(/[^a-z0-9]/g, '');
+      const submission = existingSubmissions[subKey] || null;
+
+      if (submission && submission.reporterName) {
+        document.getElementById('reporter').value = submission.reporterName;
+      } else if (urlEmail) {
+        document.getElementById('reporter').value = parseNameFromEmail(urlEmail);
+      }
+
       const todayStr = new Date().toISOString().split('T')[0];
-
-      let reasonOptionsHtml = '<option value=""></option>';
-      reasonCodesList.forEach(rc => { reasonOptionsHtml += `<option value="${rc}">${rc}</option>`; });
-
-      let recoveryOptionsHtml = '<option value=""></option>';
-      recoveryPlansList.forEach(rp => { recoveryOptionsHtml += `<option value="${rp}">${rp}</option>`; });
 
       activeRoutes.forEach((r, idx) => {
         let tr = document.createElement('tr');
         let html = `<td class="route-cell">${r.code}<input type="hidden" name="routeCode_${idx}" value="${r.code}"></td>`;
 
+        let rowHasDown = false;
+        let savedReason = '';
+        let savedRecovery = '';
+        let savedReschedule = '';
+        let savedComments = '';
+
         days.forEach(day => {
           if (r.activeDays && r.activeDays.includes(day)) {
+            const recKey = r.code.toLowerCase() + '_' + day;
+            let dayStatus = 'Covered';
+
+            if (submission && submission.records && submission.records[recKey]) {
+              const rec = submission.records[recKey];
+              if (rec.status) dayStatus = rec.status;
+              if (dayStatus === 'Down') {
+                rowHasDown = true;
+                if (rec.reasonCode) savedReason = rec.reasonCode;
+                if (rec.recoveryPlan) savedRecovery = rec.recoveryPlan;
+                if (rec.rescheduleDate) savedReschedule = rec.rescheduleDate;
+                if (rec.comments) savedComments = rec.comments;
+              }
+            }
+
+            const isCovered = (dayStatus === 'Covered');
+            const statusClass = isCovered ? 'status-covered' : 'status-down';
+
             html += `
               <td>
-                <select name="${day}_${idx}" class="status-covered" onchange="updateSelectColorAndState(this, ${idx})">
-                  <option value="Covered" class="opt-covered" selected>Covered</option>
-                  <option value="Down" class="opt-down">Down</option>
+                <select name="${day}_${idx}" class="${statusClass}" onchange="updateSelectColorAndState(this, ${idx})">
+                  <option value="Covered" class="opt-covered" ${isCovered ? 'selected' : ''}>Covered</option>
+                  <option value="Down" class="opt-down" ${!isCovered ? 'selected' : ''}>Down</option>
                 </select>
               </td>`;
           } else {
@@ -498,11 +527,13 @@
           }
         });
 
+        const disabledAttr = rowHasDown ? '' : 'disabled';
+
         html += `
-          <td><select name="reason_${idx}" disabled>${reasonOptionsHtml}</select></td>
-          <td><select name="recoveryPlan_${idx}" disabled>${recoveryOptionsHtml}</select></td>
-          <td><input type="date" name="reschedule_${idx}" min="${todayStr}" disabled></td>
-          <td><input type="text" name="comments_${idx}" disabled></td>
+          <td><select name="reason_${idx}" ${disabledAttr}>${buildOptionsHtml(reasonCodesList, savedReason)}</select></td>
+          <td><select name="recoveryPlan_${idx}" ${disabledAttr}>${buildOptionsHtml(recoveryPlansList, savedRecovery)}</select></td>
+          <td><input type="date" name="reschedule_${idx}" value="${savedReschedule}" min="${todayStr}" ${disabledAttr}></td>
+          <td><input type="text" name="comments_${idx}" value="${savedComments}" ${disabledAttr}></td>
         `;
 
         tr.innerHTML = html;
