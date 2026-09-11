@@ -98,6 +98,8 @@
       font-weight: bold;
       border-color: #f5c6cb !important;
     }
+    option.opt-covered { background-color: #d4edda !important; color: #155724 !important; }
+    option.opt-down { background-color: #f8d7da !important; color: #721c24 !important; }
     .form-actions { 
       margin-top: 20px; 
       text-align: right; 
@@ -276,6 +278,13 @@
       document.getElementById('customModal').style.display = 'none';
     }
 
+    function parseNameFromEmail(email) {
+      if (!email || typeof email !== 'string' || email.indexOf('@') === -1) return '';
+      const handle = email.split('@')[0];
+      const parts = handle.split(/[._-]/);
+      return parts.map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(' ');
+    }
+
     function buildWeekDropdown() {
       const weekSelect = document.getElementById('week');
       weekSelect.innerHTML = '';
@@ -325,6 +334,10 @@
       recoveryPlansList = data.recoveryPlans || [];
       locationMap = data.routesByLocation || {};
 
+      if (urlEmail && !document.getElementById('reporter').value) {
+        document.getElementById('reporter').value = parseNameFromEmail(urlEmail);
+      }
+
       const locationSelect = document.getElementById('location');
       locationSelect.innerHTML = '';
 
@@ -337,13 +350,6 @@
         return;
       }
 
-      if (allowedLocs.length > 1) {
-        const defaultOpt = document.createElement('option');
-        defaultOpt.value = '';
-        defaultOpt.textContent = 'Select City...';
-        locationSelect.appendChild(defaultOpt);
-      }
-
       allowedLocs.forEach(loc => {
         const opt = document.createElement('option');
         opt.value = loc;
@@ -353,8 +359,16 @@
 
       if (urlLocation && allowedLocs.includes(urlLocation)) {
         locationSelect.value = urlLocation;
+        locationSelect.disabled = true;
         renderGrid();
       } else {
+        if (allowedLocs.length > 1) {
+          const defaultOpt = document.createElement('option');
+          defaultOpt.value = '';
+          defaultOpt.textContent = 'Select City...';
+          locationSelect.insertBefore(defaultOpt, locationSelect.firstChild);
+          locationSelect.value = '';
+        }
         hideLoading();
       }
     }
