@@ -5730,9 +5730,9 @@
       "reporterName": "Kyla Chaffee",
       "records": {
         "i62ak_tue": {
-          "status": "Down",
-          "reasonCode": "Equip Unavail-Ideal",
-          "recoveryPlan": "Ryder next regular delivery",
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
@@ -5744,18 +5744,18 @@
           "comments": ""
         },
         "i64ak_thu": {
-          "status": "Down",
-          "reasonCode": "Driver Not Available",
-          "recoveryPlan": "Ryder 2 day delay",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "i65ak_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
+        },
+        "i65ak_fri": {
+          "status": "Down",
+          "reasonCode": "Driver Not Available",
+          "recoveryPlan": "Ryder 2 day delay",
+          "rescheduleDate": "",
+          "comments": "hhhhhh"
         }
       }
     }
