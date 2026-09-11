@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <title>Route Status Entry</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0; 
+      padding: 20px 10px; 
+      font-size: 12px; 
+      color: #333; 
+      background-color: #eef2f5; 
+    }
+    .app-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      border: 1px solid #dcdfe6;
+    }
+    .app-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #1f3d63;
+    }
+    .instructions-banner {
+      background-color: #fdf2f2;
+      border: 1px solid #f5c6cb;
+      color: #721c24;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .header-card { 
+      background: #f8fafc; 
+      padding: 16px; 
+      border: 1px solid #d1d5db; 
+      border-radius: 6px; 
+      margin-bottom: 20px; 
+    }
+    .header-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 16px; 
+      margin-bottom: 12px; 
+    }
+    .header-grid:last-child { margin-bottom: 0; }
+    label { font-weight: bold; color: #2c3e50; display: block; margin-bottom: 4px; }
+    input[type="text"], input[type="date"], select { 
+      width: 100%; 
+      padding: 7px 10px; 
+      box-sizing: border-box; 
+      border: 1px solid #a6b9d0; 
+      border-radius: 4px; 
+      font-size: 12px;
+      background-color: #fff;
+    }
+    select:disabled, input:readonly { background-color: #e9ecef; color: #495057; cursor: not-allowed; }
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 4px;
+      border: 1px solid #152b47;
+    }
+    table { width: 100%; border-collapse: collapse; background: #fff; font-size: 11px; }
+    th { 
+      background-color: #1f3d63; 
+      color: white; 
+      padding: 8px 4px; 
+      text-align: center; 
+      font-weight: bold; 
+      border: 1px solid #152b47; 
+    }
+    th.th-weekday {
+      background-color: #365f91 !important;
+      border-color: #294971 !important;
+    }
+    td { padding: 5px; border: 1px solid #d9d9d9; text-align: center; }
+    .route-cell { background-color: #f2f5f8; font-weight: bold; text-align: left; padding-left: 10px; color: #2c3e50; }
+    .inactive-cell { background-color: #e9ecef; border: 1px solid #d9d9d9; }
+    .status-covered {
+      background-color: #d4edda !important;
+      color: #155724 !important;
+      font-weight: bold;
+      border-color: #c3e6cb !important;
+    }
+    .status-down {
+      background-color: #f8d7da !important;
+      color: #721c24 !important;
+      font-weight: bold;
+      border-color: #f5c6cb !important;
+    }
+    .form-actions { 
+      margin-top: 20px; 
+      text-align: right; 
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .btn-csv {
+      background-color: #34495e; 
+      color: white; 
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 4px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      font-size: 13px; 
+    }
+    .btn-submit { 
+      background-color: #27ae60; color: white; padding: 10px 28px; border: none; border-radius: 4px; 
+      font-weight: bold; cursor: pointer; font-size: 13px;
+    }
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    .modal-box {
+      background: #ffffff;
+      border-radius: 6px;
+      width: 420px;
+      max-width: 90%;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    .modal-header { background: #c0392b; color: #ffffff; padding: 10px 16px; font-weight: bold; font-size: 13px; }
+    .modal-header.success { background: #27ae60; }
+    .modal-body { padding: 16px; font-size: 12px; color: #2c3e50; line-height: 1.5; }
+    .modal-footer { padding: 10px 16px; text-align: right; background: #f8fafc; border-top: 1px solid #eef2f5; }
+    .btn-modal-close { background: #2c3e50; color: #ffffff; border: none; padding: 6px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .spinner {
+      border: 4px solid #e2e8f0;
+      border-top: 4px solid #1f3d63;
+      border-radius: 50%;
+      width: 34px; height: 34px;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 12px auto;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="app-title">Route Status Entry</div>
+
+    <div class="instructions-banner">
+      All route statuses are defaulted to <strong>Covered</strong>. Please review, and change any disrupted routes to <strong>Down</strong>.
+    </div>
+
+    <form id="routeForm">
+      <div class="header-card">
+        <div class="header-grid">
+          <div>
+            <label for="reporter">Reporter Name:</label>
+            <input type="text" id="reporter" name="reporter" placeholder="First Last" required>
+          </div>
+          <div>
+            <label for="location">Location (City):</label>
+            <select id="location" name="location" required>
+              <option value="">Loading allowed locations...</option>
+            </select>
+          </div>
+        </div>
+        <div class="header-grid">
+          <div>
+            <label for="customer">Customer:</label>
+            <select id="customer" name="customer" disabled>
+              <option value="Hill's Pet Nutrition">Hill's Pet Nutrition</option>
+            </select>
+          </div>
+          <div>
+            <label for="week">Week:</label>
+            <select id="week" name="week" required>
+              <option value="">Calculating week options...</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 9%;">Route Code</th>
+              <th class="th-weekday" style="width: 10%;">Monday</th>
+              <th class="th-weekday" style="width: 10%;">Tuesday</th>
+              <th class="th-weekday" style="width: 10%;">Wednesday</th>
+              <th class="th-weekday" style="width: 10%;">Thursday</th>
+              <th class="th-weekday" style="width: 10%;">Friday</th>
+              <th style="width: 11%;">Reason Code</th>
+              <th style="width: 10%;">Recovery Plan</th>
+              <th style="width: 10%;">Reschedule Date</th>
+              <th style="width: 10%;">Comments</th>
+            </tr>
+          </thead>
+          <tbody id="gridBody">
+            <tr><td colspan="10" style="padding: 16px; color: #777;">Loading route definitions...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="csvBtn" class="btn-csv" onclick="exportToCSV()">Download CSV</button>
+        <button type="button" id="submitBtn" class="btn-submit" onclick="submitData()">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="loadingOverlay" class="modal-overlay" style="display: none; background: rgba(255, 255, 255, 0.75); z-index: 3000;">
+    <div style="text-align: center; font-weight: bold; color: #1f3d63; font-size: 13px;">
+      <div class="spinner"></div>
+      <div id="loadingText">Loading route data...</div>
+    </div>
+  </div>
+
+  <div id="customModal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <div id="modalTitle" class="modal-header">Validation Error</div>
+      <div id="modalMessage" class="modal-body">Please fix the highlighted errors before submitting.</div>
+      <div id="modalFooter" class="modal-footer">
+        <button type="button" class="btn-modal-close" onclick="closeModal()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const days = ['mon', 'tue', 'wed', 'thu', 'fri'];
+    let locationMap = {};
+    let activeRoutes = [];
+    let currentUserEmail = '';
+    let reasonCodesList = [];
+    let recoveryPlansList = [];
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlEmail = urlParams.get('email') || '';
+    const urlLocation = urlParams.get('location') || '';
+
+    function showLoading(text = "Loading route data...") {
+      document.getElementById('loadingText').textContent = text;
+      document.getElementById('loadingOverlay').style.display = 'flex';
+    }
+
+    function hideLoading() {
+      document.getElementById('loadingOverlay').style.display = 'none';
+    }
+
+    function showAlert(message, title = "Validation Error", isSuccess = false) {
+      const modal = document.getElementById('customModal');
+      const titleElem = document.getElementById('modalTitle');
+      const msgElem = document.getElementById('modalMessage');
+      const footerElem = document.getElementById('modalFooter');
+      
+      titleElem.textContent = title;
+      titleElem.className = isSuccess ? 'modal-header success' : 'modal-header';
+      msgElem.textContent = message;
+      
+      footerElem.innerHTML = '<button type="button" class="btn-modal-close" onclick="closeModal()">OK</button>';
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('customModal').style.display = 'none';
+    }
+
+    function buildWeekDropdown() {
+      const weekSelect = document.getElementById('week');
+      weekSelect.innerHTML = '';
+      const today = new Date();
+      const fmt = (d) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+      const currentMon = new Date(today);
+      const day = currentMon.getDay();
+      const diff = currentMon.getDate() - day + (day === 0 ? -6 : 1);
+      currentMon.setDate(diff);
+
+      for (let i = -1; i <= 2; i++) {
+        const mon = new Date(currentMon);
+        mon.setDate(currentMon.getDate() + (i * 7));
+        const fri = new Date(mon);
+        fri.setDate(mon.getDate() + 4);
+
+        const startOfYear = new Date(mon.getFullYear(), 0, 1);
+        const pastDays = (mon - startOfYear) / 86400000;
+        const weekNum = Math.ceil((pastDays + startOfYear.getDay() + 1) / 7);
+
+        const weekStr = `Week ${weekNum} (${fmt(mon)}-${fmt(fri)})`;
+        const opt = document.createElement('option');
+        opt.value = weekStr;
+        opt.textContent = weekStr;
+        if (i === 0) opt.selected = true;
+        weekSelect.appendChild(opt);
+      }
+    }
+
+    window.onload = function() {
+      showLoading("Loading form configuration...");
+      currentUserEmail = urlEmail;
+      buildWeekDropdown();
+
+      fetch('config.json?v=' + new Date().getTime())
+        .then(res => res.json())
+        .then(config => { initFormWithConfig(config); })
+        .catch(err => {
+          hideLoading();
+          showAlert("Failed to load options config: " + err.message, "Configuration Error");
+        });
+    };
+
+    function initFormWithConfig(data) {
+      reasonCodesList = data.reasonCodes || [];
+      recoveryPlansList = data.recoveryPlans || [];
+      locationMap = data.routesByLocation || {};
+
+      const locationSelect = document.getElementById('location');
+      locationSelect.innerHTML = '';
+
+      const allowedLocs = data.allowedLocations || Object.keys(locationMap);
+
+      if (allowedLocs.length === 0) {
+        locationSelect.innerHTML = '<option value="">No locations configured</option>';
+        document.getElementById('gridBody').innerHTML = '<tr><td colspan="10" style="padding: 16px; color: red;">No locations found in configuration. Run Sync from Google Sheets.</td></tr>';
+        hideLoading();
+        return;
+      }
+
+      if (allowedLocs.length > 1) {
+        const defaultOpt = document.createElement('option');
+        defaultOpt.value = '';
+        defaultOpt.textContent = 'Select City...';
+        locationSelect.appendChild(defaultOpt);
+      }
+
+      allowedLocs.forEach(loc => {
+        const opt = document.createElement('option');
+        opt.value = loc;
+        opt.textContent = loc;
+        locationSelect.appendChild(opt);
+      });
+
+      if (urlLocation && allowedLocs.includes(urlLocation)) {
+        locationSelect.value = urlLocation;
+        renderGrid();
+      } else {
+        hideLoading();
+      }
+    }
+
+    document.getElementById('location').addEventListener('change', renderGrid);
+
+    function updateSelectColorAndState(selectElement, idx) {
+      selectElement.classList.remove('status-covered', 'status-down');
+      if (selectElement.value === 'Covered') {
+        selectElement.classList.add('status-covered');
+      } else if (selectElement.value === 'Down') {
+        selectElement.classList.add('status-down');
+      }
+      updateRowDisruptionFields(idx);
+    }
+
+    function updateRowDisruptionFields(idx) {
+      const r = activeRoutes[idx];
+      if (!r) return;
+
+      const form = document.getElementById('routeForm');
+      let hasDown = false;
+
+      days.forEach(day => {
+        if (r.activeDays && r.activeDays.includes(day)) {
+          const dayVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : '';
+          if (dayVal === 'Down') hasDown = true;
+        }
+      });
+
+      const reasonElem = form[`reason_${idx}`];
+      const recElem = form[`recoveryPlan_${idx}`];
+      const rescheduleElem = form[`reschedule_${idx}`];
+      const commentsElem = form[`comments_${idx}`];
+
+      if (reasonElem) reasonElem.disabled = !hasDown;
+      if (recElem) recElem.disabled = !hasDown;
+      if (rescheduleElem) rescheduleElem.disabled = !hasDown;
+      if (commentsElem) commentsElem.disabled = !hasDown;
+
+      if (!hasDown) {
+        if (reasonElem) reasonElem.value = '';
+        if (recElem) recElem.value = '';
+        if (rescheduleElem) rescheduleElem.value = '';
+        if (commentsElem) commentsElem.value = '';
+      }
+    }
+
+    function renderGrid() {
+      const selectedLocation = document.getElementById('location').value;
+      const tbody = document.getElementById('gridBody');
+      tbody.innerHTML = '';
+
+      activeRoutes = locationMap[selectedLocation] || [];
+
+      if (activeRoutes.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="10" style="padding: 16px; color: #777;">Select a valid location to populate routes.</td></tr>';
+        hideLoading();
+        return;
+      }
+
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      let reasonOptionsHtml = '<option value=""></option>';
+      reasonCodesList.forEach(rc => { reasonOptionsHtml += `<option value="${rc}">${rc}</option>`; });
+
+      let recoveryOptionsHtml = '<option value=""></option>';
+      recoveryPlansList.forEach(rp => { recoveryOptionsHtml += `<option value="${rp}">${rp}</option>`; });
+
+      activeRoutes.forEach((r, idx) => {
+        let tr = document.createElement('tr');
+        let html = `<td class="route-cell">${r.code}<input type="hidden" name="routeCode_${idx}" value="${r.code}"></td>`;
+
+        days.forEach(day => {
+          if (r.activeDays && r.activeDays.includes(day)) {
+            html += `
+              <td>
+                <select name="${day}_${idx}" class="status-covered" onchange="updateSelectColorAndState(this, ${idx})">
+                  <option value="Covered" class="opt-covered" selected>Covered</option>
+                  <option value="Down" class="opt-down">Down</option>
+                </select>
+              </td>`;
+          } else {
+            html += `<td class="inactive-cell"></td>`;
+          }
+        });
+
+        html += `
+          <td><select name="reason_${idx}" disabled>${reasonOptionsHtml}</select></td>
+          <td><select name="recoveryPlan_${idx}" disabled>${recoveryOptionsHtml}</select></td>
+          <td><input type="date" name="reschedule_${idx}" min="${todayStr}" disabled></td>
+          <td><input type="text" name="comments_${idx}" disabled></td>
+        `;
+
+        tr.innerHTML = html;
+        tbody.appendChild(tr);
+      });
+
+      activeRoutes.forEach((r, idx) => updateRowDisruptionFields(idx));
+      hideLoading();
+    }
+
+    function submitData() {
+      const form = document.getElementById('routeForm');
+      const reporterVal = document.getElementById('reporter').value.trim();
+      if (!reporterVal) {
+        showAlert("Please enter a Reporter Name.", "Validation Error");
+        document.getElementById('reporter').focus();
+        return;
+      }
+
+      const locationVal = document.getElementById('location').value;
+      if (!locationVal || activeRoutes.length === 0) {
+        showAlert("Please select a valid location before submitting.", "Validation Error");
+        return;
+      }
+
+      executeSubmission();
+    }
+
+    function executeSubmission() {
+      const form = document.getElementById('routeForm');
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Submitting...";
+
+      showLoading("Saving submission...");
+
+      const payload = {
+        reporterEmail: currentUserEmail,
+        reporterName: document.getElementById('reporter').value.trim(),
+        location: document.getElementById('location').value,
+        customer: document.getElementById('customer').value,
+        week: document.getElementById('week').value,
+        routes: []
+      };
+
+      activeRoutes.forEach((r, idx) => {
+        payload.routes.push({
+          routeCode: r.code,
+          monday: form[`mon_${idx}`] ? form[`mon_${idx}`].value : '',
+          tuesday: form[`tue_${idx}`] ? form[`tue_${idx}`].value : '',
+          wednesday: form[`wed_${idx}`] ? form[`wed_${idx}`].value : '',
+          thursday: form[`thu_${idx}`] ? form[`thu_${idx}`].value : '',
+          friday: form[`fri_${idx}`] ? form[`fri_${idx}`].value : '',
+          reasonCode: form[`reason_${idx}`] ? form[`reason_${idx}`].value : '',
+          recoveryPlan: form[`recoveryPlan_${idx}`] ? form[`recoveryPlan_${idx}`].value : '',
+          rescheduleDate: form[`reschedule_${idx}`] ? form[`reschedule_${idx}`].value : '',
+          comments: form[`comments_${idx}`] ? form[`comments_${idx}`].value : ''
+        });
+      });
+
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse";
+      const formData = new URLSearchParams();
+      formData.append("entry.1637612356", JSON.stringify(payload));
+
+      fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData
+      })
+      .then(() => {
+        hideLoading();
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit";
+        showAlert("Submission Successful!", "Success", true);
+      })
+      .catch(err => {
+        hideLoading();
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit";
+        showAlert("Submission failed: " + err.message, "Submission Error");
+      });
+    }
+  </script>
+</body>
+</html>
