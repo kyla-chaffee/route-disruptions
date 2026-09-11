@@ -5711,9 +5711,9 @@
           "comments": ""
         },
         "i64ak_thu": {
-          "status": "Down",
-          "reasonCode": "Driver Not Available",
-          "recoveryPlan": "Ryder 3 day delay",
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
