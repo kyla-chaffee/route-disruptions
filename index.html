@@ -243,7 +243,7 @@
       </div>
 
       <div class="form-actions">
-        <button type="button" id="csvBtn" class="btn-csv" onclick="exportToCSV()">Download CSV</button>
+        <button type="button" id="csvBtn" class="btn-csv" onclick="exportToExcel()">Download Excel</button>
         <button type="button" id="submitBtn" class="btn-submit" onclick="submitData()">Submit</button>
       </div>
     </form>
@@ -361,7 +361,7 @@
         const opt = document.createElement('option');
         opt.value = weekStr;
         opt.textContent = weekStr;
-        if (i === 1) opt.selected = true; // Auto-select NEXT week by default
+        if (i === 1) opt.selected = true; // Default to NEXT week
         weekSelect.appendChild(opt);
       }
     }
@@ -706,7 +706,6 @@
         body: formData
       })
       .then(() => {
-        // 1. UPDATE LIVE JAVASCRIPT MEMORY INSTANTLY
         const subKey = (payload.location + '_' + payload.week).toLowerCase().replace(/[^a-z0-9]/g, '');
         if (!existingSubmissions[subKey]) {
           existingSubmissions[subKey] = {
@@ -733,7 +732,6 @@
           });
         });
 
-        // 2. INSTANTLY SWITCH BUTTON TO RESUBMIT
         updateSubmitButtonState(true);
 
         hideLoading();
@@ -752,10 +750,11 @@
       });
     }
 
-    function exportToCSV() {
+    function exportToExcel() {
       const selectedLocation = document.getElementById('location').value;
       const selectedWeek = document.getElementById('week').value;
       const reporterVal = document.getElementById('reporter').value.trim();
+      const customerVal = document.getElementById('customer').value;
       const form = document.getElementById('routeForm');
 
       if (!selectedLocation || activeRoutes.length === 0) {
@@ -763,43 +762,84 @@
         return;
       }
 
-      let csvRows = [];
-      csvRows.push(["Reporter Name", "Location", "Customer", "Week", "Route Code", "Day", "Status", "Reason Code", "Recovery Plan", "Reschedule Date", "Comments"]);
+      let excelHtml = `
+        <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+        <head>
+          <meta charset="utf-8">
+          <style>
+            body { font-family: Arial, sans-serif; font-size: 10pt; }
+            .meta-label { font-weight: bold; background-color: #e2e8f0; }
+            th { background-color: #1f3d63; color: #ffffff; font-weight: bold; text-align: center; border: 0.5pt solid #152b47; }
+            th.weekday { background-color: #365f91; }
+            td { border: 0.5pt solid #cbd5e1; text-align: center; vertical-align: middle; }
+            td.route-cell { background-color: #f1f5f9; font-weight: bold; text-align: left; }
+            td.inactive-cell { background-color: #e9ecef; }
+            td.status-covered { background-color: #d4edda; color: #155724; font-weight: bold; }
+            td.status-down { background-color: #fee2e2; color: #991b1b; font-weight: bold; }
+          </style>
+        </head>
+        <body>
+          <table>
+            <tr><td class="meta-label">Reporter Name:</td><td colspan="3">${reporterVal}</td></tr>
+            <tr><td class="meta-label">Location:</td><td colspan="3">${selectedLocation}</td></tr>
+            <tr><td class="meta-label">Customer:</td><td colspan="3">${customerVal}</td></tr>
+            <tr><td class="meta-label">Week:</td><td colspan="3">${selectedWeek}</td></tr>
+            <tr></tr>
+            <thead>
+              <tr>
+                <th style="width: 120px;">Route Code</th>
+                <th class="weekday" style="width: 90px;">Monday</th>
+                <th class="weekday" style="width: 90px;">Tuesday</th>
+                <th class="weekday" style="width: 90px;">Wednesday</th>
+                <th class="weekday" style="width: 90px;">Thursday</th>
+                <th class="weekday" style="width: 90px;">Friday</th>
+                <th style="width: 130px;">Reason Code</th>
+                <th style="width: 130px;">Recovery Plan</th>
+                <th style="width: 110px;">Reschedule Date</th>
+                <th style="width: 150px;">Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
 
       activeRoutes.forEach((r, idx) => {
+        excelHtml += `<tr><td class="route-cell">${r.code}</td>`;
+
         days.forEach(day => {
           if (r.activeDays && r.activeDays.includes(day)) {
-            const statusVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : 'Covered';
-            const reasonVal = form[`reason_${idx}`] ? form[`reason_${idx}`].value : '';
-            const recoveryVal = form[`recoveryPlan_${idx}`] ? form[`recoveryPlan_${idx}`].value : '';
-            const rescheduleVal = form[`reschedule_${idx}`] ? form[`reschedule_${idx}`].value : '';
-            const commentsVal = form[`comments_${idx}`] ? form[`comments_${idx}`].value : '';
-
-            const dayFull = day.charAt(0).toUpperCase() + day.slice(1);
-
-            csvRows.push([
-              `"${reporterVal}"`,
-              `"${selectedLocation}"`,
-              `"Hill's Pet Nutrition"`,
-              `"${selectedWeek}"`,
-              `"${r.code}"`,
-              `"${dayFull}"`,
-              `"${statusVal}"`,
-              `"${reasonVal}"`,
-              `"${recoveryVal}"`,
-              `"${rescheduleVal}"`,
-              `"${commentsVal.replace(/"/g, '""')}"`
-            ]);
+            const dayVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : 'Covered';
+            const cssClass = dayVal === 'Covered' ? 'status-covered' : 'status-down';
+            excelHtml += `<td class="${cssClass}">${dayVal}</td>`;
+          } else {
+            excelHtml += `<td class="inactive-cell">N/A</td>`;
           }
         });
+
+        const reasonVal = form[`reason_${idx}`] ? form[`reason_${idx}`].value : '';
+        const recoveryVal = form[`recoveryPlan_${idx}`] ? form[`recoveryPlan_${idx}`].value : '';
+        const rescheduleVal = form[`reschedule_${idx}`] ? form[`reschedule_${idx}`].value : '';
+        const commentsVal = form[`comments_${idx}`] ? form[`comments_${idx}`].value : '';
+
+        excelHtml += `
+          <td>${reasonVal}</td>
+          <td>${recoveryVal}</td>
+          <td>${rescheduleVal}</td>
+          <td>${commentsVal}</td>
+        </tr>`;
       });
 
-      const csvString = csvRows.map(e => e.join(",")).join("\n");
-      const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+      excelHtml += `
+            </tbody>
+          </table>
+        </body>
+        </html>
+      `;
+
+      const blob = new Blob([excelHtml], { type: 'application/vnd.ms-excel;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
-      link.setAttribute("href", url);
-      link.setAttribute("download", `Route_Status_${selectedLocation.replace(/[^a-z0-9]/gi, '_')}_${selectedWeek.replace(/[^a-z0-9]/gi, '_')}.csv`);
+      link.href = url;
+      link.download = `Route_Status_${selectedLocation.replace(/[^a-z0-9]/gi, '_')}_${selectedWeek.replace(/[^a-z0-9]/gi, '_')}.xls`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
