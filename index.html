@@ -339,7 +339,10 @@
       currentUserEmail = urlEmail;
       buildWeekDropdown();
 
-      fetch('config.json?v=' + new Date().getTime())
+      // Direct fetch from GitHub raw storage with cache-buster timestamp
+      const rawConfigUrl = 'https://raw.githubusercontent.com/kyla-chaffee/route-disruptions/main/config.json?t=' + new Date().getTime();
+
+      fetch(rawConfigUrl)
         .then(res => res.json())
         .then(config => { initFormWithConfig(config); })
         .catch(err => {
