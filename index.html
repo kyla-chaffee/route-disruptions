@@ -133,6 +133,11 @@
       font-weight: 700; cursor: pointer; font-size: 12px;
     }
     .btn-submit:hover { background-color: #166534; }
+    .btn-resubmit {
+      background-color: #ef4444; color: #ffffff; padding: 9px 24px; border: none; border-radius: 4px; 
+      font-weight: 700; cursor: pointer; font-size: 12px;
+    }
+    .btn-resubmit:hover { background-color: #dc2626; }
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -153,9 +158,12 @@
     }
     .modal-header { background: #b91c1c; color: #ffffff; padding: 10px 14px; font-weight: 700; font-size: 13px; }
     .modal-header.success { background: #15803d; }
+    .modal-header.warning { background: #b91c1c; }
     .modal-body { padding: 16px; font-size: 12px; color: #0f172a; line-height: 1.5; font-weight: 600; }
-    .modal-footer { padding: 10px 14px; text-align: right; background: #f8fafc; border-top: 1px solid #e2e8f0; }
+    .modal-footer { padding: 10px 14px; text-align: right; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end; gap: 8px; }
     .btn-modal-close { background: #1f3d63; color: #ffffff; border: none; padding: 7px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+    .btn-modal-confirm { background: #dc2626; color: #ffffff; border: none; padding: 7px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
+    .btn-modal-cancel { background: #64748b; color: #ffffff; border: none; padding: 7px 18px; border-radius: 4px; cursor: pointer; font-weight: 700; }
     .spinner {
       border: 4px solid #cbd5e1;
       border-top: 4px solid #1f3d63;
@@ -265,6 +273,7 @@
     let reasonCodesList = [];
     let recoveryPlansList = [];
     let existingSubmissions = {};
+    let hasExistingSubmission = false;
 
     const urlParams = new URLSearchParams(window.location.search);
     const urlEmail = urlParams.get('email') || '';
@@ -287,10 +296,32 @@
       
       titleElem.textContent = title;
       titleElem.className = isSuccess ? 'modal-header success' : 'modal-header';
-      msgElem.textContent = message;
+      msgElem.innerHTML = message.replace(/\n/g, '<br>');
       
       footerElem.innerHTML = '<button type="button" class="btn-modal-close" onclick="closeModal()">OK</button>';
       modal.style.display = 'flex';
+    }
+
+    function showConfirmModal(message, title, onConfirm) {
+      const modal = document.getElementById('customModal');
+      const titleElem = document.getElementById('modalTitle');
+      const msgElem = document.getElementById('modalMessage');
+      const footerElem = document.getElementById('modalFooter');
+      
+      titleElem.textContent = title;
+      titleElem.className = 'modal-header warning';
+      msgElem.innerHTML = message.replace(/\n/g, '<br>');
+      
+      footerElem.innerHTML = `
+        <button type="button" class="btn-modal-cancel" onclick="closeModal()">Cancel</button>
+        <button type="button" class="btn-modal-confirm" id="confirmBtn">Yes, Overwrite</button>
+      `;
+      modal.style.display = 'flex';
+
+      document.getElementById('confirmBtn').onclick = function() {
+        closeModal();
+        onConfirm();
+      };
     }
 
     function closeModal() {
@@ -335,14 +366,11 @@
     }
 
     window.onload = function() {
-      showLoading("Loading form configuration...");
+      showLoading("Loading your location options and configuration...");
       currentUserEmail = urlEmail;
       buildWeekDropdown();
 
-      // Direct fetch from GitHub raw storage with cache-buster timestamp
-      const rawConfigUrl = 'https://raw.githubusercontent.com/kyla-chaffee/route-disruptions/main/config.json?t=' + new Date().getTime();
-
-      fetch(rawConfigUrl)
+      fetch('config.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(config => { initFormWithConfig(config); })
         .catch(err => {
@@ -404,11 +432,19 @@
 
       locationSelect.value = selectedLoc;
       locationSelect.disabled = (userAllowedLocs.length <= 1);
-      renderGrid();
+      
+      triggerGridRender();
     }
 
-    document.getElementById('location').addEventListener('change', renderGrid);
-    document.getElementById('week').addEventListener('change', renderGrid);
+    function triggerGridRender() {
+      showLoading("Searching for Historical Data...");
+      setTimeout(() => {
+        renderGrid();
+      }, 150);
+    }
+
+    document.getElementById('location').addEventListener('change', triggerGridRender);
+    document.getElementById('week').addEventListener('change', triggerGridRender);
 
     function updateSelectColorAndState(selectElement, idx) {
       selectElement.classList.remove('status-covered', 'status-down');
@@ -461,6 +497,19 @@
       return html;
     }
 
+    function updateSubmitButtonState(exists) {
+      const submitBtn = document.getElementById('submitBtn');
+      hasExistingSubmission = exists;
+
+      if (exists) {
+        submitBtn.innerText = "Resubmit";
+        submitBtn.className = "btn-resubmit";
+      } else {
+        submitBtn.innerText = "Submit";
+        submitBtn.className = "btn-submit";
+      }
+    }
+
     function renderGrid() {
       const selectedLocation = document.getElementById('location').value;
       const selectedWeek = document.getElementById('week').value;
@@ -471,12 +520,16 @@
 
       if (activeRoutes.length === 0) {
         tbody.innerHTML = '<tr><td colspan="10" style="padding: 16px; color: #475569;">Select a valid location to populate routes.</td></tr>';
+        updateSubmitButtonState(false);
         hideLoading();
         return;
       }
 
       const subKey = (selectedLocation + '_' + selectedWeek).toLowerCase().replace(/[^a-z0-9]/g, '');
       const submission = existingSubmissions[subKey] || null;
+
+      const submissionFound = !!(submission && submission.records && Object.keys(submission.records).length > 0);
+      updateSubmitButtonState(submissionFound);
 
       if (submission && submission.reporterName) {
         document.getElementById('reporter').value = submission.reporterName;
@@ -498,7 +551,7 @@
 
         days.forEach(day => {
           if (r.activeDays && r.activeDays.includes(day)) {
-            const recKey = r.code.toLowerCase() + '_' + day;
+            const recKey = r.code.toLowerCase().replace(/[^a-z0-9]/g, '') + '_' + day;
             let dayStatus = 'Covered';
 
             if (submission && submission.records && submission.records[recKey]) {
@@ -596,13 +649,24 @@
         }
       }
 
-      executeSubmission();
+      if (hasExistingSubmission) {
+        const selLocation = document.getElementById('location').value;
+        const selWeek = document.getElementById('week').value;
+        showConfirmModal(
+          `An existing submission already exists for <strong>${selLocation}</strong> (${selWeek}).\n\nAre you sure you want to overwrite it?`,
+          "Existing Submission Warning",
+          executeSubmission
+        );
+      } else {
+        executeSubmission();
+      }
     }
 
     function executeSubmission() {
       const form = document.getElementById('routeForm');
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
+      const originalText = submitBtn.innerText;
       submitBtn.innerText = "Submitting...";
 
       showLoading("Saving submission...");
@@ -644,13 +708,17 @@
       .then(() => {
         hideLoading();
         submitBtn.disabled = false;
-        submitBtn.innerText = "Submit";
-        showAlert("Submission Successful!", "Success", true);
+        submitBtn.innerText = originalText;
+        showAlert(
+          "Submission Successful!\n\nNOTE: New submissions may take 1-2 minutes to reflect on the form if refreshed.",
+          "Success",
+          true
+        );
       })
       .catch(err => {
         hideLoading();
         submitBtn.disabled = false;
-        submitBtn.innerText = "Submit";
+        submitBtn.innerText = originalText;
         showAlert("Submission failed: " + err.message, "Submission Error");
       });
     }
