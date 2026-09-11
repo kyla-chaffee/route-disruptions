@@ -8,10 +8,10 @@
     body { 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
       margin: 0; 
-      padding: 20px 10px; 
+      padding: 24px 12px; 
       font-size: 12px; 
-      color: #333; 
-      background-color: #eef2f5; 
+      color: #0f172a; 
+      background-color: #cbd5e1; 
     }
     .app-container {
       max-width: 1080px;
@@ -19,31 +19,32 @@
       background: #ffffff;
       padding: 24px;
       border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      border: 1px solid #dcdfe6;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      border: 1px solid #94a3b8;
     }
     .app-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #2c3e50;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
       margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #1f3d63;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #1e3a8a;
     }
     .instructions-banner {
-      background-color: #fdf2f2;
-      border: 1px solid #f5c6cb;
-      color: #721c24;
-      padding: 10px 14px;
+      background-color: #fef2f2;
+      border: 1px solid #f87171;
+      color: #991b1b;
+      padding: 12px 16px;
       border-radius: 6px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       font-size: 12px;
-      line-height: 1.4;
+      line-height: 1.5;
+      font-weight: 500;
     }
     .header-card { 
-      background: #f8fafc; 
+      background: #f1f5f9; 
       padding: 16px; 
-      border: 1px solid #d1d5db; 
+      border: 1px solid #64748b; 
       border-radius: 6px; 
       margin-bottom: 20px; 
     }
@@ -54,77 +55,82 @@
       margin-bottom: 12px; 
     }
     .header-grid:last-child { margin-bottom: 0; }
-    label { font-weight: bold; color: #2c3e50; display: block; margin-bottom: 4px; }
+    label { font-weight: 700; color: #0f172a; display: block; margin-bottom: 5px; }
     input[type="text"], input[type="date"], select { 
       width: 100%; 
-      padding: 7px 10px; 
+      padding: 8px 10px; 
       box-sizing: border-box; 
-      border: 1px solid #a6b9d0; 
+      border: 1px solid #64748b; 
       border-radius: 4px; 
       font-size: 12px;
-      background-color: #fff;
+      background-color: #ffffff;
+      color: #0f172a;
+      font-weight: 500;
     }
-    select:disabled, input:readonly { background-color: #e9ecef; color: #495057; cursor: not-allowed; }
+    select:disabled, input:readonly { background-color: #e2e8f0; color: #475569; cursor: not-allowed; border-color: #94a3b8; }
     .table-wrapper {
       overflow-x: auto;
       border-radius: 4px;
-      border: 1px solid #152b47;
+      border: 2px solid #1e293b;
     }
     table { width: 100%; border-collapse: collapse; background: #fff; font-size: 11px; }
     th { 
-      background-color: #1f3d63; 
-      color: white; 
-      padding: 8px 4px; 
+      background-color: #1e293b; 
+      color: #ffffff; 
+      padding: 10px 6px; 
       text-align: center; 
-      font-weight: bold; 
-      border: 1px solid #152b47; 
+      font-weight: 700; 
+      border: 1px solid #0f172a; 
+      font-size: 11px;
     }
     th.th-weekday {
-      background-color: #365f91 !important;
-      border-color: #294971 !important;
+      background-color: #1d4ed8 !important;
+      border-color: #1e40af !important;
     }
-    td { padding: 5px; border: 1px solid #d9d9d9; text-align: center; }
-    .route-cell { background-color: #f2f5f8; font-weight: bold; text-align: left; padding-left: 10px; color: #2c3e50; }
-    .inactive-cell { background-color: #e9ecef; border: 1px solid #d9d9d9; }
+    td { padding: 6px; border: 1px solid #cbd5e1; text-align: center; }
+    .route-cell { background-color: #f1f5f9; font-weight: 700; text-align: left; padding-left: 10px; color: #0f172a; }
+    .inactive-cell { background-color: #e2e8f0; border: 1px solid #cbd5e1; }
     .status-covered {
-      background-color: #d4edda !important;
-      color: #155724 !important;
-      font-weight: bold;
-      border-color: #c3e6cb !important;
+      background-color: #d1fae5 !important;
+      color: #065f46 !important;
+      font-weight: 700;
+      border: 1px solid #34d399 !important;
     }
     .status-down {
-      background-color: #f8d7da !important;
-      color: #721c24 !important;
-      font-weight: bold;
-      border-color: #f5c6cb !important;
+      background-color: #fee2e2 !important;
+      color: #991b1b !important;
+      font-weight: 700;
+      border: 1px solid #f87171 !important;
     }
-    option.opt-covered { background-color: #d4edda !important; color: #155724 !important; }
-    option.opt-down { background-color: #f8d7da !important; color: #721c24 !important; }
+    option.opt-covered { background-color: #d1fae5 !important; color: #065f46 !important; font-weight: 700; }
+    option.opt-down { background-color: #fee2e2 !important; color: #991b1b !important; font-weight: 700; }
     .form-actions { 
       margin-top: 20px; 
       text-align: right; 
       display: flex;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 12px;
     }
     .btn-csv {
-      background-color: #34495e; 
-      color: white; 
+      background-color: #334155; 
+      color: #ffffff; 
       padding: 10px 20px; 
       border: none; 
       border-radius: 4px; 
-      font-weight: bold; 
+      font-weight: 700; 
       cursor: pointer; 
       font-size: 13px; 
     }
+    .btn-csv:hover { background-color: #1e293b; }
     .btn-submit { 
-      background-color: #27ae60; color: white; padding: 10px 28px; border: none; border-radius: 4px; 
-      font-weight: bold; cursor: pointer; font-size: 13px;
+      background-color: #15803d; color: #ffffff; padding: 10px 28px; border: none; border-radius: 4px; 
+      font-weight: 700; cursor: pointer; font-size: 13px;
     }
+    .btn-submit:hover { background-color: #166534; }
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(15, 23, 42, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -135,19 +141,19 @@
       border-radius: 6px;
       width: 420px;
       max-width: 90%;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
       overflow: hidden;
     }
-    .modal-header { background: #c0392b; color: #ffffff; padding: 10px 16px; font-weight: bold; font-size: 13px; }
-    .modal-header.success { background: #27ae60; }
-    .modal-body { padding: 16px; font-size: 12px; color: #2c3e50; line-height: 1.5; }
-    .modal-footer { padding: 10px 16px; text-align: right; background: #f8fafc; border-top: 1px solid #eef2f5; }
-    .btn-modal-close { background: #2c3e50; color: #ffffff; border: none; padding: 6px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    .modal-header { background: #dc2626; color: #ffffff; padding: 12px 16px; font-weight: 700; font-size: 14px; }
+    .modal-header.success { background: #15803d; }
+    .modal-body { padding: 18px; font-size: 13px; color: #0f172a; line-height: 1.5; }
+    .modal-footer { padding: 12px 16px; text-align: right; background: #f8fafc; border-top: 1px solid #e2e8f0; }
+    .btn-modal-close { background: #0f172a; color: #ffffff; border: none; padding: 7px 20px; border-radius: 4px; cursor: pointer; font-weight: 700; }
     .spinner {
-      border: 4px solid #e2e8f0;
-      border-top: 4px solid #1f3d63;
+      border: 4px solid #cbd5e1;
+      border-top: 4px solid #1d4ed8;
       border-radius: 50%;
-      width: 34px; height: 34px;
+      width: 36px; height: 36px;
       animation: spin 0.8s linear infinite;
       margin: 0 auto 12px auto;
     }
@@ -197,7 +203,7 @@
         <table>
           <thead>
             <tr>
-              <th style="width: 9%;">Route Code</th>
+              <th style="width: 10%;">Route Code</th>
               <th class="th-weekday" style="width: 10%;">Monday</th>
               <th class="th-weekday" style="width: 10%;">Tuesday</th>
               <th class="th-weekday" style="width: 10%;">Wednesday</th>
@@ -206,11 +212,11 @@
               <th style="width: 11%;">Reason Code</th>
               <th style="width: 10%;">Recovery Plan</th>
               <th style="width: 10%;">Reschedule Date</th>
-              <th style="width: 10%;">Comments</th>
+              <th style="width: 9%;">Comments</th>
             </tr>
           </thead>
           <tbody id="gridBody">
-            <tr><td colspan="10" style="padding: 16px; color: #777;">Loading route definitions...</td></tr>
+            <tr><td colspan="10" style="padding: 16px; color: #64748b;">Loading route definitions...</td></tr>
           </tbody>
         </table>
       </div>
@@ -222,8 +228,8 @@
     </form>
   </div>
 
-  <div id="loadingOverlay" class="modal-overlay" style="display: none; background: rgba(255, 255, 255, 0.75); z-index: 3000;">
-    <div style="text-align: center; font-weight: bold; color: #1f3d63; font-size: 13px;">
+  <div id="loadingOverlay" class="modal-overlay" style="display: none; background: rgba(255, 255, 255, 0.85); z-index: 3000;">
+    <div style="text-align: center; font-weight: 700; color: #1e293b; font-size: 13px;">
       <div class="spinner"></div>
       <div id="loadingText">Loading route data...</div>
     </div>
@@ -333,36 +339,60 @@
       reasonCodesList = data.reasonCodes || [];
       recoveryPlansList = data.recoveryPlans || [];
       locationMap = data.routesByLocation || {};
+      const emailLocations = data.emailLocations || {};
 
       if (urlEmail && !document.getElementById('reporter').value) {
         document.getElementById('reporter').value = parseNameFromEmail(urlEmail);
       }
 
+      const allAvailableLocs = data.allowedLocations || Object.keys(locationMap);
+      let userAllowedLocs = [];
+
+      if (urlEmail && emailLocations[urlEmail.toLowerCase()]) {
+        const assigned = emailLocations[urlEmail.toLowerCase()];
+        if (assigned.map(x => x.toUpperCase()).includes("ALL")) {
+          userAllowedLocs = allAvailableLocs;
+        } else {
+          userAllowedLocs = allAvailableLocs.filter(loc => 
+            assigned.some(aLoc => loc.toLowerCase().includes(aLoc.toLowerCase()) || aLoc.toLowerCase().includes(loc.toLowerCase()))
+          );
+          if (userAllowedLocs.length === 0) userAllowedLocs = assigned;
+        }
+      } else {
+        userAllowedLocs = allAvailableLocs;
+      }
+
       const locationSelect = document.getElementById('location');
       locationSelect.innerHTML = '';
 
-      const allowedLocs = data.allowedLocations || Object.keys(locationMap);
-
-      if (allowedLocs.length === 0) {
-        locationSelect.innerHTML = '<option value="">No locations configured</option>';
-        document.getElementById('gridBody').innerHTML = '<tr><td colspan="10" style="padding: 16px; color: red;">No locations found in configuration. Run Sync from Google Sheets.</td></tr>';
+      if (userAllowedLocs.length === 0) {
+        locationSelect.innerHTML = '<option value="">No locations configured for user</option>';
+        document.getElementById('gridBody').innerHTML = '<tr><td colspan="10" style="padding: 16px; color: red;">No routes found for your account.</td></tr>';
         hideLoading();
         return;
       }
 
-      allowedLocs.forEach(loc => {
+      userAllowedLocs.forEach(loc => {
         const opt = document.createElement('option');
         opt.value = loc;
         opt.textContent = loc;
         locationSelect.appendChild(opt);
       });
 
-      if (urlLocation && allowedLocs.includes(urlLocation)) {
-        locationSelect.value = urlLocation;
+      let targetLoc = '';
+      if (urlLocation) {
+        const match = userAllowedLocs.find(l => l.toLowerCase() === urlLocation.toLowerCase() || l.toLowerCase().includes(urlLocation.toLowerCase()));
+        if (match) targetLoc = match;
+      } else if (userAllowedLocs.length === 1) {
+        targetLoc = userAllowedLocs[0];
+      }
+
+      if (targetLoc) {
+        locationSelect.value = targetLoc;
         locationSelect.disabled = true;
         renderGrid();
       } else {
-        if (allowedLocs.length > 1) {
+        if (userAllowedLocs.length > 1) {
           const defaultOpt = document.createElement('option');
           defaultOpt.value = '';
           defaultOpt.textContent = 'Select City...';
@@ -425,7 +455,7 @@
       activeRoutes = locationMap[selectedLocation] || [];
 
       if (activeRoutes.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="10" style="padding: 16px; color: #777;">Select a valid location to populate routes.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="10" style="padding: 16px; color: #64748b;">Select a valid location to populate routes.</td></tr>';
         hideLoading();
         return;
       }
@@ -458,7 +488,7 @@
 
         html += `
           <td><select name="reason_${idx}" disabled>${reasonOptionsHtml}</select></td>
-          <td><select name="recoveryPlan_${idx}" disabled>${recoveryOptionsHtml}</select></td>
+          <td><select name="recoveryPlan_${idx}" disabled>${recoveryPlansHtml}</select></td>
           <td><input type="date" name="reschedule_${idx}" min="${todayStr}" disabled></td>
           <td><input type="text" name="comments_${idx}" disabled></td>
         `;
