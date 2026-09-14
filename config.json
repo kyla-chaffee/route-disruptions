@@ -5532,8 +5532,10 @@
   },
   "emailLocations": {
     "kyla_chaffee@hillspet.com": [
-      "USI6 - Anchorage",
       "USHA - Atlanta"
+    ],
+    "edward_wakileh@ryder.com": [
+      "USIG - Seattle"
     ]
   },
   "existingSubmissions": {
