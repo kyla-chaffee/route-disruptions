@@ -6339,6 +6339,151 @@
           "comments": ""
         }
       }
+    },
+    "usibportlandweek40sep28oct2": {
+      "reporterName": "Edward Wakileh",
+      "records": {
+        "ib101_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib101_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib101_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib102_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib102_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib103_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib104_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib201_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib202_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib301_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib302_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib303_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib401_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib401_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib402_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib403_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib404_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib501_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib502_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ib503_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
     }
   }
 }
