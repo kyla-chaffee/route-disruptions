@@ -5533,8 +5533,25 @@
   "emailLocations": {
     "kyla_chaffee@hillspet.com": [
       "USHB - Albuquerque",
-      "USHA - Atlanta",
-      "USG1 - Milwaukee"
+      "USHI - Kansas City"
+    ],
+    "edward_wakileh@ryder.com": [
+      "USI6 - Anchorage",
+      "USBP - Boise",
+      "USJB - Butte",
+      "USHE - Denver",
+      "USIB - Portland",
+      "USID - Salt Lake City",
+      "USIG - Seattle",
+      "USIJ - Spokane"
+    ],
+    "esteban_perez@ryder.com": [
+      "USI7 - Fresno",
+      "USIF - Ontario",
+      "USIA - Phoenix"
+    ],
+    "john_lackey@ryder.com": [
+      "USJN - Vacaville"
     ]
   },
   "existingSubmissions": {
