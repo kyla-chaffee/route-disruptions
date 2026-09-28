@@ -366,9 +366,37 @@
       }
     }
 
+    function isLocationSubmitted(loc, weekStr) {
+      if (!loc || !weekStr) return false;
+      const subKey = (loc + '_' + weekStr).toLowerCase().replace(/[^a-z0-9]/g, '');
+      const sub = existingSubmissions[subKey];
+      return !!(sub && sub.records && Object.keys(sub.records).length > 0);
+    }
+
+    function updateLocationDropdownLabels() {
+      const locationSelect = document.getElementById('location');
+      const selectedWeek = document.getElementById('week').value;
+      const currentVal = locationSelect.value;
+
+      Array.from(locationSelect.options).forEach(opt => {
+        const rawLoc = opt.value;
+        if (!rawLoc) return;
+
+        if (!isLocationSubmitted(rawLoc, selectedWeek)) {
+          opt.textContent = `⚠️ ${rawLoc}`;
+        } else {
+          opt.textContent = rawLoc;
+        }
+      });
+
+      if (currentVal) {
+        locationSelect.value = currentVal;
+      }
+    }
+
     window.onload = function() {
       showLoading("Loading your location options and configuration...");
-      currentUserEmail = urlEmail;
+      currentUserEmail = urlEmail.trim();
       buildWeekDropdown();
 
       fetch('config.json?v=' + new Date().getTime())
@@ -387,16 +415,24 @@
       existingSubmissions = data.existingSubmissions || {};
       const emailLocations = data.emailLocations || {};
 
-      if (urlEmail && !document.getElementById('reporter').value) {
-        document.getElementById('reporter').value = parseNameFromEmail(urlEmail);
+      const cleanUrlEmail = urlEmail.trim().toLowerCase();
+
+      if (cleanUrlEmail && !document.getElementById('reporter').value) {
+        document.getElementById('reporter').value = parseNameFromEmail(cleanUrlEmail);
       }
 
       const allAvailableLocs = data.allowedLocations || Object.keys(locationMap);
       let userAllowedLocs = [];
 
-      if (urlEmail && emailLocations[urlEmail.toLowerCase()]) {
-        const assigned = emailLocations[urlEmail.toLowerCase()];
-        if (assigned.map(x => x.toUpperCase()).includes("ALL")) {
+      let matchedEmailKey = Object.keys(emailLocations).find(k => k.trim().toLowerCase() === cleanUrlEmail);
+      if (!matchedEmailKey && cleanUrlEmail) {
+        const simplifiedUrlEmail = cleanUrlEmail.replace(/[._-]/g, '');
+        matchedEmailKey = Object.keys(emailLocations).find(k => k.trim().toLowerCase().replace(/[._-]/g, '') === simplifiedUrlEmail);
+      }
+
+      if (matchedEmailKey && emailLocations[matchedEmailKey]) {
+        const assigned = emailLocations[matchedEmailKey];
+        if (assigned.map(x => x.toString().toUpperCase()).includes("ALL")) {
           userAllowedLocs = allAvailableLocs;
         } else {
           userAllowedLocs = allAvailableLocs.filter(loc => 
@@ -434,6 +470,7 @@
       locationSelect.value = selectedLoc;
       locationSelect.disabled = (userAllowedLocs.length <= 1);
       
+      updateLocationDropdownLabels();
       triggerGridRender();
     }
 
@@ -445,7 +482,10 @@
     }
 
     document.getElementById('location').addEventListener('change', triggerGridRender);
-    document.getElementById('week').addEventListener('change', triggerGridRender);
+    document.getElementById('week').addEventListener('change', function() {
+      updateLocationDropdownLabels();
+      triggerGridRender();
+    });
 
     function updateSelectColorAndState(selectElement, idx) {
       selectElement.classList.remove('status-covered', 'status-down');
@@ -733,6 +773,7 @@
         });
 
         updateSubmitButtonState(true);
+        updateLocationDropdownLabels();
 
         hideLoading();
         submitBtn.disabled = false;
