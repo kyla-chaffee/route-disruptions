@@ -6869,9 +6869,9 @@
           "comments": ""
         },
         "hb401_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Equip Unavailable",
+          "recoveryPlan": "Ryder 1 day delay",
           "rescheduleDate": "",
           "comments": ""
         },
@@ -6890,16 +6890,16 @@
           "comments": ""
         },
         "hb501_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Other",
+          "recoveryPlan": "Ryder 3 day delay",
           "rescheduleDate": "",
-          "comments": ""
+          "comments": "test"
         },
         "hb502_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Equip Unavailable",
+          "recoveryPlan": "Ryder 3 day delay",
           "rescheduleDate": "",
           "comments": ""
         },
