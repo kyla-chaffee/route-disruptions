@@ -5545,6 +5545,11 @@
       "USIG - Seattle",
       "USIJ - Spokane"
     ],
+    "devon_doherty@hillspet.com": [
+      "USHA - Atlanta",
+      "USHM - Baltimore",
+      "USG2 - Burnsville"
+    ],
     "esteban_perez@ryder.com": [
       "USI7 - Fresno",
       "USIF - Ontario",
@@ -6816,150 +6821,87 @@
         }
       }
     },
-    "ushbalbuquerqueweek41oct5oct9": {
-      "reporterName": "Kyla Chaffee",
+    "usi7fresnoweek41oct5oct9": {
+      "reporterName": "Esteban Perez",
       "records": {
-        "hb201_tue": {
+        "i7101_mon": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb201_wed": {
+        "i7102_mon": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb202_tue": {
+        "i7201_tue": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb202_wed": {
+        "i7202_tue": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb203_tue": {
+        "i7301_wed": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb203_wed": {
+        "i7301_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb203_thu": {
+        "i7302_wed": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb401_thu": {
-          "status": "Down",
-          "reasonCode": "Equip Unavailable",
-          "recoveryPlan": "Ryder 1 day delay",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hb402_thu": {
+        "i7302_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb402_fri": {
+        "i7401_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb501_fri": {
-          "status": "Down",
-          "reasonCode": "Other",
-          "recoveryPlan": "Ryder 3 day delay",
-          "rescheduleDate": "",
-          "comments": "test"
-        },
-        "hb502_fri": {
-          "status": "Down",
-          "reasonCode": "Equip Unavailable",
-          "recoveryPlan": "Ryder 3 day delay",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hb801_tue": {
+        "i7401_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb801_wed": {
+        "i7402_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "hb801_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hb801_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hbalb_mon": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hbalb_tue": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hbalb_wed": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hbalb_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "hbalb_fri": {
+        "i7402_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
