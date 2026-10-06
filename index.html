@@ -767,12 +767,19 @@
       const formData = new URLSearchParams();
       formData.append("entry.1637612356", JSON.stringify(payload));
 
-      fetch(formUrl, {
+      // Minimum 3-second delay timer
+      const minimumDelay = new Promise(resolve => setTimeout(resolve, 3000));
+
+      // Network request Promise
+      const fetchPromise = fetch(formUrl, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData
-      })
+      });
+
+      // Wait for BOTH the 3-second delay AND the network post to complete
+      Promise.all([minimumDelay, fetchPromise])
       .then(() => {
         const subKey = (payload.location + '_' + payload.week).toLowerCase().replace(/[^a-z0-9]/g, '');
         if (!existingSubmissions[subKey]) {
