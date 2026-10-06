@@ -782,7 +782,7 @@
 
       try {
         // 1. Payload size check
-        if (payloadString.length > 32000) {
+        if (payloadString.length > 50) {
           throw new Error(`Payload length limit exceeded (${payloadString.length} chars). Data too large for Google Forms.`);
         }
 
