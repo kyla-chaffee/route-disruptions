@@ -295,6 +295,22 @@
   </div>
 
   <script>
+    // =========================================================================
+    // ENVIRONMENT CONFIGURATION (DEV vs PROD)
+    // =========================================================================
+    const IS_DEV = false; // Set to true for DEV, false for PROD
+
+    const formUrl = IS_DEV
+      ? "https://docs.google.com/forms/d/e/YOUR_DEV_FORM_ID/formResponse"
+      : "https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse";
+
+    const formEntryId = IS_DEV
+      ? "entry.DEV_ENTRY_ID"
+      : "entry.1637612356";
+
+    // =========================================================================
+    // GLOBAL APP VARIABLES
+    // =========================================================================
     const days = ['mon', 'tue', 'wed', 'thu', 'fri'];
     let locationMap = {};
     let activeRoutes = [];
@@ -776,9 +792,10 @@
       });
 
       const payloadString = JSON.stringify(payload);
-      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse";
       const formData = new URLSearchParams();
-      formData.append("entry.1637612356", payloadString);
+      
+      // Dynamic form field key driven by IS_DEV config at top of script
+      formData.append(formEntryId, payloadString);
 
       try {
         // 1. Check size limit to prevent Google Forms silent dropping
@@ -792,6 +809,7 @@
           controller.abort(new Error("Request timed out (server took longer than 15 seconds to respond)"));
         }, 15000);
 
+        // Uses dynamic formUrl configured at top of script
         const response = await fetch(formUrl, {
           method: "POST",
           mode: "no-cors",
