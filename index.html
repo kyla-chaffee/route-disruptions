@@ -411,7 +411,7 @@
         if (!rawLoc) return;
 
         if (!isLocationSubmitted(rawLoc, selectedWeek)) {
-          opt.textContent = `⚠️️ ${rawLoc}`;
+          opt.textContent = `⚠ ${rawLoc}`;
         } else {
           opt.textContent = rawLoc;
         }
@@ -781,14 +781,16 @@
       formData.append("entry.1637612356", payloadString);
 
       try {
-        // 1. Payload size check
+        // 1. Check size limit to prevent Google Forms silent dropping
         if (payloadString.length > 32000) {
           throw new Error(`Payload length limit exceeded (${payloadString.length} chars). Data too large for Google Forms.`);
         }
 
-        // 2. Timeout protection (15 seconds)
+        // 2. Timeout protection with explicit Error reason passed to AbortController
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 15000);
+        const timeoutId = setTimeout(() => {
+          controller.abort(new Error("Request timed out (server took longer than 15 seconds to respond)"));
+        }, 1);
 
         const response = await fetch(formUrl, {
           method: "POST",
@@ -868,7 +870,10 @@
         const errType = err.name || 'NetworkError';
         let errMsg = err.message || 'Service communication failed.';
 
-        if (errMsg.toLowerCase().includes('failed to fetch')) {
+        // Normalize browser-default AbortController strings into clear technical descriptions
+        if (errType === 'AbortError' || errMsg.includes('aborted') || errMsg.includes('abort')) {
+          errMsg = 'Request timed out (server took longer than 15 seconds to respond)';
+        } else if (errMsg.toLowerCase().includes('failed to fetch')) {
           errMsg = 'Failed to fetch (lost connection)';
         }
 
