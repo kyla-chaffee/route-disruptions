@@ -411,7 +411,7 @@
         if (!rawLoc) return;
 
         if (!isLocationSubmitted(rawLoc, selectedWeek)) {
-          opt.textContent = `⚠️ ${rawLoc}`;
+          opt.textContent = `⚠️️ ${rawLoc}`;
         } else {
           opt.textContent = rawLoc;
         }
@@ -731,13 +731,14 @@
       }
     }
 
-    function executeSubmission() {
+    async function executeSubmission() {
       const form = document.getElementById('routeForm');
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
       submitBtn.innerText = "Submitting...";
 
       showLoading("Saving submission...");
+      const startTime = Date.now();
 
       const payload = {
         reporterEmail: currentUserEmail,
@@ -767,20 +768,20 @@
       const formData = new URLSearchParams();
       formData.append("entry.1637612356", JSON.stringify(payload));
 
-      // Minimum 3-second delay timer
-      const minimumDelay = new Promise(resolve => setTimeout(resolve, 3000));
+      try {
+        await fetch(formUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData
+        });
 
-      // Network request Promise
-      const fetchPromise = fetch(formUrl, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData
-      });
+        // Enforce exact minimum 3000ms delay on every run
+        const elapsedTime = Date.now() - startTime;
+        if (elapsedTime < 3000) {
+          await new Promise(resolve => setTimeout(resolve, 3000 - elapsedTime));
+        }
 
-      // Wait for BOTH the 3-second delay AND the network post to complete
-      Promise.all([minimumDelay, fetchPromise])
-      .then(() => {
         const subKey = (payload.location + '_' + payload.week).toLowerCase().replace(/[^a-z0-9]/g, '');
         if (!existingSubmissions[subKey]) {
           existingSubmissions[subKey] = {
@@ -817,13 +818,18 @@
           "Success",
           true
         );
-      })
-      .catch(err => {
+      } catch (err) {
+        // Enforce delay even on error
+        const elapsedTime = Date.now() - startTime;
+        if (elapsedTime < 3000) {
+          await new Promise(resolve => setTimeout(resolve, 3000 - elapsedTime));
+        }
+
         hideLoading();
         submitBtn.disabled = false;
         updateSubmitButtonState(hasExistingSubmission);
         showAlert("Submission failed: " + err.message, "Submission Error");
-      });
+      }
     }
 
     function exportToExcel() {
