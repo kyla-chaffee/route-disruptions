@@ -790,7 +790,7 @@
         const controller = new AbortController();
         const timeoutId = setTimeout(() => {
           controller.abort(new Error("Request timed out (server took longer than 15 seconds to respond)"));
-        }, 1);
+        }, 15000);
 
         const response = await fetch(formUrl, {
           method: "POST",
