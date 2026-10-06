@@ -169,7 +169,7 @@
     .modal-box {
       background: #ffffff;
       border-radius: 6px;
-      width: 440px;
+      width: 480px;
       max-width: 90%;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       border: 1px solid #94a3b8;
@@ -389,7 +389,7 @@
         const opt = document.createElement('option');
         opt.value = weekStr;
         opt.textContent = weekStr;
-        if (i === 1) opt.selected = true; // Default to NEXT week
+        if (i === 1) opt.selected = true;
         weekSelect.appendChild(opt);
       }
     }
@@ -411,7 +411,7 @@
         if (!rawLoc) return;
 
         if (!isLocationSubmitted(rawLoc, selectedWeek)) {
-          opt.textContent = `⚠️️ ${rawLoc}`;
+          opt.textContent = `⚠ ${rawLoc}`;
         } else {
           opt.textContent = rawLoc;
         }
@@ -775,19 +775,32 @@
         }
       });
 
+      const payloadString = JSON.stringify(payload);
       const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse";
       const formData = new URLSearchParams();
-      formData.append("entry.1637612356", JSON.stringify(payload));
+      formData.append("entry.1637612356", payloadString);
 
       try {
-        await fetch(formUrl, {
+        // 1. Payload size check
+        if (payloadString.length > 32000) {
+          throw new Error(`Payload length limit exceeded (${payloadString.length} chars). Data too large for Google Forms.`);
+        }
+
+        // 2. Timeout protection (15 seconds)
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+        const response = await fetch(formUrl, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: formData
+          body: formData,
+          signal: controller.signal
         });
 
-        // Enforce exact minimum 3000ms delay on every run
+        clearTimeout(timeoutId);
+
+        // Enforce minimum UI loading delay (3000ms)
         const elapsedTime = Date.now() - startTime;
         if (elapsedTime < 3000) {
           await new Promise(resolve => setTimeout(resolve, 3000 - elapsedTime));
@@ -806,7 +819,6 @@
         activeRoutes.forEach((r, idx) => {
           days.forEach(day => {
             if (r.activeDays && r.activeDays.includes(day)) {
-              const fullDay = day === 'mon' ? 'monday' : day === 'tue' ? 'tuesday' : day === 'wed' ? 'wednesday' : day === 'thu' ? 'thursday' : 'friday';
               const dayVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : 'Covered';
               const recKey = r.code.toLowerCase().replace(/[^a-z0-9]/g, '') + '_' + day;
 
@@ -840,8 +852,8 @@
           "Success",
           true
         );
+
       } catch (err) {
-        // Enforce delay even on error
         const elapsedTime = Date.now() - startTime;
         if (elapsedTime < 3000) {
           await new Promise(resolve => setTimeout(resolve, 3000 - elapsedTime));
@@ -850,7 +862,33 @@
         hideLoading();
         submitBtn.disabled = false;
         updateSubmitButtonState(hasExistingSubmission);
-        showAlert("Submission failed: " + err.message, "Submission Error");
+
+        const isoTimestamp = new Date().toISOString();
+        const byteSize = payloadString ? payloadString.length : 0;
+        const errType = err.name || 'NetworkError';
+        let errMsg = err.message || 'Service communication failed.';
+
+        if (errMsg.toLowerCase().includes('failed to fetch')) {
+          errMsg = 'Failed to fetch (lost connection)';
+        }
+
+        console.error("Submission Failure:", { errType, errMsg, isoTimestamp, byteSize, payload });
+
+        const diagnosticText = 
+          `Timestamp: ${isoTimestamp}\n` +
+          `Error Type: ${errType}\n` +
+          `Details: ${errMsg}\n` +
+          `Location: ${payload.location}\n` +
+          `Payload Size: ${byteSize} bytes`;
+
+        showAlert(
+          `The submission was NOT successful.\n\n` +
+          `Please try again. If the issue persists, please take a screenshot of this error and send to:\n` +
+          `• <strong>kyla_chaffee@hillspet.com</strong>\n` +
+          `• <strong>devon_doherty@hillspet.com</strong>\n\n` +
+          `Diagnostic Details:\n${diagnosticText}`,
+          "Submission Failure"
+        );
       }
     }
 
