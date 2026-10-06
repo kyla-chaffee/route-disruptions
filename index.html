@@ -411,7 +411,7 @@
         if (!rawLoc) return;
 
         if (!isLocationSubmitted(rawLoc, selectedWeek)) {
-          opt.textContent = `⚠️️ ${rawLoc}`;
+          opt.textContent = `⚠ ${rawLoc}`;
         } else {
           opt.textContent = rawLoc;
         }
@@ -750,18 +750,29 @@
       };
 
       activeRoutes.forEach((r, idx) => {
-        payload.routes.push({
-          routeCode: r.code,
-          monday: form[`mon_${idx}`] ? form[`mon_${idx}`].value : '',
-          tuesday: form[`tue_${idx}`] ? form[`tue_${idx}`].value : '',
-          wednesday: form[`wed_${idx}`] ? form[`wed_${idx}`].value : '',
-          thursday: form[`thu_${idx}`] ? form[`thu_${idx}`].value : '',
-          friday: form[`fri_${idx}`] ? form[`fri_${idx}`].value : '',
-          reasonCode: form[`reason_${idx}`] ? form[`reason_${idx}`].value : '',
-          recoveryPlan: form[`recoveryPlan_${idx}`] ? form[`recoveryPlan_${idx}`].value : '',
-          rescheduleDate: form[`reschedule_${idx}`] ? form[`reschedule_${idx}`].value : '',
-          comments: form[`comments_${idx}`] ? form[`comments_${idx}`].value : ''
+        let hasDown = false;
+
+        days.forEach(day => {
+          if (r.activeDays && r.activeDays.includes(day)) {
+            const dayVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : '';
+            if (dayVal === 'Down') hasDown = true;
+          }
         });
+
+        if (hasDown) {
+          payload.routes.push({
+            routeCode: r.code,
+            monday: form[`mon_${idx}`] ? form[`mon_${idx}`].value : '',
+            tuesday: form[`tue_${idx}`] ? form[`tue_${idx}`].value : '',
+            wednesday: form[`wed_${idx}`] ? form[`wed_${idx}`].value : '',
+            thursday: form[`thu_${idx}`] ? form[`thu_${idx}`].value : '',
+            friday: form[`fri_${idx}`] ? form[`fri_${idx}`].value : '',
+            reasonCode: form[`reason_${idx}`] ? form[`reason_${idx}`].value : '',
+            recoveryPlan: form[`recoveryPlan_${idx}`] ? form[`recoveryPlan_${idx}`].value : '',
+            rescheduleDate: form[`reschedule_${idx}`] ? form[`reschedule_${idx}`].value : '',
+            comments: form[`comments_${idx}`] ? form[`comments_${idx}`].value : ''
+          });
+        }
       });
 
       const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPsvpmGevAkseCOb5naaEBTCM_Y8zkhmKqMY0ocy3N3a_IIQ/formResponse";
@@ -792,17 +803,28 @@
           existingSubmissions[subKey].reporterName = payload.reporterName;
         }
 
-        payload.routes.forEach(r => {
+        activeRoutes.forEach((r, idx) => {
           days.forEach(day => {
-            const fullDay = day === 'mon' ? 'monday' : day === 'tue' ? 'tuesday' : day === 'wed' ? 'wednesday' : day === 'thu' ? 'thursday' : 'friday';
-            if (r[fullDay]) {
-              const recKey = r.routeCode.toLowerCase().replace(/[^a-z0-9]/g, '') + '_' + day;
+            if (r.activeDays && r.activeDays.includes(day)) {
+              const fullDay = day === 'mon' ? 'monday' : day === 'tue' ? 'tuesday' : day === 'wed' ? 'wednesday' : day === 'thu' ? 'thursday' : 'friday';
+              const dayVal = form[`${day}_${idx}`] ? form[`${day}_${idx}`].value : 'Covered';
+              const recKey = r.code.toLowerCase().replace(/[^a-z0-9]/g, '') + '_' + day;
+
+              let rCode = form[`reason_${idx}`] ? form[`reason_${idx}`].value : '';
+              let rPlan = form[`recoveryPlan_${idx}`] ? form[`recoveryPlan_${idx}`].value : '';
+              let rDate = form[`reschedule_${idx}`] ? form[`reschedule_${idx}`].value : '';
+              let rCom = form[`comments_${idx}`] ? form[`comments_${idx}`].value : '';
+
+              if (dayVal !== 'Down') {
+                rCode = ''; rPlan = ''; rDate = ''; rCom = '';
+              }
+
               existingSubmissions[subKey].records[recKey] = {
-                status: r[fullDay],
-                reasonCode: r.reasonCode,
-                recoveryPlan: r.recoveryPlan,
-                rescheduleDate: r.rescheduleDate,
-                comments: r.comments
+                status: dayVal,
+                reasonCode: rCode,
+                recoveryPlan: rPlan,
+                rescheduleDate: rDate,
+                comments: rCom
               };
             }
           });
