@@ -7177,248 +7177,150 @@
         }
       }
     },
-    "usjlgreensboroweek42oct12oct16": {
-      "reporterName": "Devon Doherty",
+    "ushbalbuquerqueweek42oct12oct16": {
+      "reporterName": "kyla",
       "records": {
-        "jl101_mon": {
+        "hb201_tue": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl101_tue": {
+        "hb201_wed": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl102_mon": {
+        "hb202_tue": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl103_mon": {
+        "hb202_wed": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl103_tue": {
+        "hb203_tue": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl104_mon": {
+        "hb203_wed": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl105_mon": {
+        "hb203_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl106_mon": {
+        "hb401_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl107_mon": {
+        "hb402_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl107_tue": {
+        "hb402_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl201_tue": {
+        "hb501_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl201_wed": {
+        "hb502_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl202_tue": {
+        "hb801_tue": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl202_wed": {
+        "hb801_wed": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl203_tue": {
+        "hb801_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl204_tue": {
+        "hb801_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl204_wed": {
+        "hbalb_mon": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl301_wed": {
+        "hbalb_tue": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl301_thu": {
+        "hbalb_wed": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl302_wed": {
+        "hbalb_thu": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
           "rescheduleDate": "",
           "comments": ""
         },
-        "jl302_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl303_wed": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl304_wed": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl304_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl401_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl402_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl403_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl403_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl404_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl501_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl502_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl503_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl504_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl505_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "jl506_fri": {
+        "hbalb_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
