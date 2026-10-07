@@ -7197,9 +7197,9 @@
           "comments": ""
         },
         "ha102_mon": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Driver Absence",
+          "recoveryPlan": "Ryder 1 day delay",
           "rescheduleDate": "",
           "comments": ""
         },
