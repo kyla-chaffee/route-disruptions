@@ -9023,11 +9023,11 @@
           "comments": ""
         },
         "hm102_mon": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
+          "status": "Down",
+          "reasonCode": "Driver Absence",
+          "recoveryPlan": "Ryder 2 day delay",
+          "rescheduleDate": "2026-10-07",
+          "comments": "HM102- Completed by Ryder driver on Wednesday, 10/7/26"
         },
         "hm103_mon": {
           "status": "Covered",
