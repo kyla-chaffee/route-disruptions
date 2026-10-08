@@ -5536,16 +5536,6 @@
       "USHF - Houston",
       "USHG - San Antonio"
     ],
-    "edward_wakileh@ryder.com": [
-      "USI6 - Anchorage",
-      "USBP - Boise",
-      "USJB - Butte",
-      "USHE - Denver",
-      "USIB - Portland",
-      "USID - Salt Lake City",
-      "USIG - Seattle",
-      "USIJ - Spokane"
-    ],
     "megan_patterson@ryder.com": [
       "USHM - Baltimore",
       "USHZ - Mansfield",
@@ -5556,11 +5546,6 @@
       "USI3 - Richmond",
       "USI4 - Rochester"
     ],
-    "esteban_perez@ryder.com": [
-      "USI7 - Fresno",
-      "USIF - Ontario",
-      "USIA - Phoenix"
-    ],
     "kyla_chaffee@hillspet.com": [
       "USHP - Jacksonville",
       "USHI - Kansas City"
@@ -5569,9 +5554,6 @@
       "USIM - Memphis",
       "USG1 - Milwaukee",
       "USIN - Mobile"
-    ],
-    "john_lackey@ryder.com": [
-      "USJN - Vacaville"
     ]
   },
   "existingSubmissions": {
