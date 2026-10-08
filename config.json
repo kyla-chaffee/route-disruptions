@@ -5531,29 +5531,9 @@
     ]
   },
   "emailLocations": {
-    "neil_williams@ryder.com": [
-      "USHB - Albuquerque",
-      "USHF - Houston",
-      "USHG - San Antonio"
-    ],
     "megan_patterson@ryder.com": [
       "USHM - Baltimore",
-      "USHZ - Mansfield",
-      "USHY - Westfield"
-    ],
-    "todd_varley@ryder.com": [
-      "USJJ - Chester",
-      "USI3 - Richmond",
-      "USI4 - Rochester"
-    ],
-    "kyla_chaffee@hillspet.com": [
-      "USHP - Jacksonville",
-      "USHI - Kansas City"
-    ],
-    "devon_doherty@hillspet.com": [
-      "USIM - Memphis",
-      "USG1 - Milwaukee",
-      "USIN - Mobile"
+      "USI3 - Richmond"
     ]
   },
   "existingSubmissions": {
