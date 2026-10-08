@@ -5531,10 +5531,10 @@
     ]
   },
   "emailLocations": {
-    "kyla_chaffee@hillspet.com": [
+    "neil_williams@ryder.com": [
       "USHB - Albuquerque",
-      "USJJ - Chester",
-      "USHI - Kansas City"
+      "USHF - Houston",
+      "USHG - San Antonio"
     ],
     "edward_wakileh@ryder.com": [
       "USI6 - Anchorage",
@@ -5546,10 +5546,24 @@
       "USIG - Seattle",
       "USIJ - Spokane"
     ],
+    "megan_patterson@ryder.com": [
+      "USHM - Baltimore",
+      "USHZ - Mansfield",
+      "USHY - Westfield"
+    ],
+    "todd_varley@ryder.com": [
+      "USJJ - Chester",
+      "USI3 - Richmond",
+      "USI4 - Rochester"
+    ],
     "esteban_perez@ryder.com": [
       "USI7 - Fresno",
       "USIF - Ontario",
       "USIA - Phoenix"
+    ],
+    "kyla_chaffee@hillspet.com": [
+      "USHP - Jacksonville",
+      "USHI - Kansas City"
     ],
     "devon_doherty@hillspet.com": [
       "USIM - Memphis",
@@ -8248,6 +8262,95 @@
           "comments": ""
         },
         "ij501_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
+    },
+    "usi7fresnoweek42oct12oct16": {
+      "reporterName": "Esteban Perez",
+      "records": {
+        "i7101_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7102_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7201_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7202_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7301_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7301_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7302_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7302_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7401_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7401_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7402_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "i7402_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
