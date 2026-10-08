@@ -5531,9 +5531,36 @@
     ]
   },
   "emailLocations": {
+    "edward_wakileh@ryder.com": [
+      "USI6 - Anchorage",
+      "USBP - Boise",
+      "USJB - Butte",
+      "USHE - Denver",
+      "USIB - Portland",
+      "USID - Salt Lake City",
+      "USIG - Seattle",
+      "USIJ - Spokane"
+    ],
     "megan_patterson@ryder.com": [
       "USHM - Baltimore",
       "USI3 - Richmond"
+    ],
+    "esteban_perez@ryder.com": [
+      "USI7 - Fresno",
+      "USIF - Ontario",
+      "USIA - Phoenix"
+    ],
+    "kyla_chaffee@hillspet.com": [
+      "USHP - Jacksonville",
+      "USHI - Kansas City"
+    ],
+    "devon_doherty@hillspet.com": [
+      "USIM - Memphis",
+      "USG1 - Milwaukee",
+      "USIN - Mobile"
+    ],
+    "john_lackey@ryder.com": [
+      "USJN - Vacaville"
     ]
   },
   "existingSubmissions": {
