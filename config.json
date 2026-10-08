@@ -8955,9 +8955,9 @@
           "comments": ""
         },
         "hp301_wed": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
+          "status": "Down",
+          "reasonCode": "Weather Related",
+          "recoveryPlan": "Ryder next regular delivery",
           "rescheduleDate": "",
           "comments": ""
         },
