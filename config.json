@@ -9694,6 +9694,193 @@
           "comments": ""
         }
       }
+    },
+    "ushgsanantonioweek42oct12oct16": {
+      "reporterName": "Neil Williams",
+      "records": {
+        "hg101_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg102_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg102_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg103_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg103_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg104_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg105_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg203_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg204_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg204_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg205_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg301_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg302_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg303_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg305_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg305_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg401_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg401_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg402_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg403_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg403_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg404_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg501_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg504_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg802_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "hg802_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
     }
   }
 }
