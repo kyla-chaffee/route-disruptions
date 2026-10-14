@@ -5569,12 +5569,16 @@
       "USIM - Memphis",
       "USG1 - Milwaukee",
       "USIN - Mobile",
-      "USHF - Houston",
       "USHP - Jacksonville",
       "USHI - Kansas City"
     ],
     "john_lackey@ryder.com": [
       "USJN - Vacaville"
+    ],
+    "jim_greene@ryder.com": [
+      "USHB - Albuquerque",
+      "USHF - Houston",
+      "USHG - San Antonio"
     ],
     "rob_diaz@ryder.com": [
       "USI6 - Anchorage",
@@ -5592,7 +5596,10 @@
     ],
     "sean_spearin@ryder.com": [
       "USHM - Baltimore",
-      "USI3 - Richmond"
+      "USHZ - Mansfield",
+      "USI3 - Richmond",
+      "USI4 - Rochester",
+      "USHY - Westfield"
     ]
   },
   "existingSubmissions": {
