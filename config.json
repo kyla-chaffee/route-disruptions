@@ -13156,6 +13156,130 @@
           "comments": ""
         }
       }
+    },
+    "ushofortlauderdaleweek44oct26oct30": {
+      "reporterName": "Jorge Rojas",
+      "records": {
+        "ho101_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho101_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho102_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho102_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho103_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho201_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho301_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho301_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho302_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho302_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho303_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho304_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho401_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho501_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho502_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho503_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho504_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
     }
   }
 }
