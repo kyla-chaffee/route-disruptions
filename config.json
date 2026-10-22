@@ -5482,59 +5482,46 @@
     ]
   },
   "emailLocations": {
-    "neil_williams@ryder.com": [
-      "USHB - Albuquerque",
-      "USHF - Houston",
-      "USHG - San Antonio"
+    "bradley_merrilees@ryder.com": [
+      "USHA - Atlanta",
+      "USIM - Memphis",
+      "USI0 - Nashville"
     ],
-    "edward_wakileh@ryder.com": [
-      "USI6 - Anchorage",
-      "USBP - Boise",
-      "USJB - Butte",
-      "USHE - Denver",
-      "USIB - Portland",
-      "USID - Salt Lake City",
-      "USIG - Seattle",
-      "USIJ - Spokane"
+    "chase_cronan@ryder.com": [
+      "USHD - Dallas",
+      "USJL - Greensboro",
+      "USIN - Mobile",
+      "USI1 - New Orleans"
     ],
-    "megan_patterson@ryder.com": [
-      "USHM - Baltimore",
-      "USI3 - Richmond"
-    ],
-    "todd_varley@ryder.com": [
-      "USJJ - Chester",
-      "USI4 - Rochester"
-    ],
-    "esteban_perez@ryder.com": [
-      "USI7 - Fresno",
-      "USIF - Ontario",
-      "USIA - Phoenix"
+    "jorge_rojas@ryder.com": [
+      "USHO - Fort Lauderdale",
+      "USHP - Jacksonville",
+      "USI5 - Tampa"
     ],
     "kyla_chaffee@hillspet.com": [
-      "USHP - Jacksonville",
       "USHI - Kansas City",
-      "USIM - Memphis",
-      "USG1 - Milwaukee",
-      "USIN - Mobile"
-    ],
-    "alopes@ryder.com": [
-      "USHZ - Mansfield",
-      "USHY - Westfield"
+      "USHJ - St Louis",
+      "USG1 - Milwaukee"
     ],
     "devon_doherty@hillspet.com": [
-      "USIM - Memphis",
       "USG1 - Milwaukee",
-      "USIN - Mobile",
-      "USHP - Jacksonville",
+      "T3 - Taylor",
       "USHI - Kansas City"
-    ],
-    "john_lackey@ryder.com": [
-      "USJN - Vacaville"
     ],
     "jim_greene@ryder.com": [
       "USHB - Albuquerque",
+      "USHA - Atlanta",
+      "USHD - Dallas",
+      "USHO - Fort Lauderdale",
+      "USJL - Greensboro",
       "USHF - Houston",
-      "USHG - San Antonio"
+      "USHP - Jacksonville",
+      "USIM - Memphis",
+      "USIN - Mobile",
+      "USI0 - Nashville",
+      "USI1 - New Orleans",
+      "USHG - San Antonio",
+      "USI5 - Tampa"
     ],
     "rob_diaz@ryder.com": [
       "USI6 - Anchorage",
