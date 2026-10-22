@@ -5482,10 +5482,33 @@
     ]
   },
   "emailLocations": {
+    "neil_williams@ryder.com": [
+      "USHB - Albuquerque",
+      "USHF - Houston",
+      "USHG - San Antonio"
+    ],
+    "edward_wakileh@ryder.com": [
+      "USI6 - Anchorage",
+      "USBP - Boise",
+      "USJB - Butte",
+      "USHE - Denver",
+      "USIB - Portland",
+      "USID - Salt Lake City",
+      "USIG - Seattle",
+      "USIJ - Spokane"
+    ],
     "bradley_merrilees@ryder.com": [
       "USHA - Atlanta",
       "USIM - Memphis",
       "USI0 - Nashville"
+    ],
+    "megan_patterson@ryder.com": [
+      "USHM - Baltimore",
+      "USI3 - Richmond"
+    ],
+    "todd_varley@ryder.com": [
+      "USJJ - Chester",
+      "USI4 - Rochester"
     ],
     "chase_cronan@ryder.com": [
       "USHD - Dallas",
@@ -5498,15 +5521,17 @@
       "USHP - Jacksonville",
       "USI5 - Tampa"
     ],
-    "kyla_chaffee@hillspet.com": [
-      "USHI - Kansas City",
-      "USHJ - St Louis",
-      "USG1 - Milwaukee"
+    "esteban_perez@ryder.com": [
+      "USI7 - Fresno",
+      "USIF - Ontario",
+      "USIA - Phoenix"
     ],
-    "devon_doherty@hillspet.com": [
-      "USG1 - Milwaukee",
-      "T3 - Taylor",
-      "USHI - Kansas City"
+    "alopes@ryder.com": [
+      "USHZ - Mansfield",
+      "USHY - Westfield"
+    ],
+    "john_lackey@ryder.com": [
+      "USJN - Vacaville"
     ],
     "jim_greene@ryder.com": [
       "USHB - Albuquerque",
@@ -5543,6 +5568,12 @@
       "USI3 - Richmond",
       "USI4 - Rochester",
       "USHY - Westfield"
+    ],
+    "devon_doherty@hillspet.com": [
+      "USHI - Kansas City"
+    ],
+    "kyla_chaffee@hillspet.com": [
+      "USG1 - Milwaukee"
     ]
   },
   "existingSubmissions": {
