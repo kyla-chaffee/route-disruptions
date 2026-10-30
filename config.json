@@ -14807,6 +14807,25 @@
           "comments": ""
         }
       }
+    },
+    "ushaatlantaweek45nov2nov6": {
+      "reporterName": "Bradley Merrilees",
+      "records": {
+        "ha503_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ha504_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
     }
   }
 }
