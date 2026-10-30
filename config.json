@@ -7067,70 +7067,65 @@
         }
       }
     },
-    "usijspokaneweek45nov2nov6": {
-      "reporterName": "Edward Wakileh",
-      "records": {
-        "ij201_tue": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "ij201_wed": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "ij202_tue": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "ij301_wed": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "ij401_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "ij401_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "ij402_thu": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        },
-        "ij501_fri": {
-          "status": "Covered",
-          "reasonCode": "",
-          "recoveryPlan": "",
-          "rescheduleDate": "",
-          "comments": ""
-        }
-      }
-    },
     "usigseattleweek45nov2nov6": {
       "reporterName": "Edward Wakileh",
       "records": {
+        "ig101_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ig101_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ig102_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ig102_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ig201_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ig202_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ig301_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ig301_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
         "ig302_wed": {
           "status": "Covered",
           "reasonCode": "",
@@ -7195,6 +7190,67 @@
           "comments": ""
         },
         "ig502_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
+    },
+    "usjbbutteweek45nov2nov6": {
+      "reporterName": "Edward Wakileh",
+      "records": {
+        "jb201_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "jb201_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "jb202_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "jb202_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "jb401_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "jb401_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "jb402_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "jb402_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
