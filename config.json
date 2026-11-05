@@ -36,7 +36,7 @@
     "USHM - Baltimore",
     "USHO - Fort Lauderdale",
     "USHP - Jacksonville",
-    "USI3 - Richmond",
+    "USHR - Richmond",
     "USHY - Westfield",
     "USHZ - Mansfield",
     "USI0 - Nashville",
@@ -58,7 +58,7 @@
     "USJJ - Chester",
     "USJL - Greensboro",
     "USJN - Vacaville",
-    "T3 - Taylor"
+    "UST3 - Taylor"
   ],
   "routesByLocation": {
     "USBP - Boise": [
@@ -2981,7 +2981,7 @@
         ]
       }
     ],
-    "USI3 - Richmond": [
+    "USHR - Richmond": [
       {
         "code": "HR201",
         "activeDays": [
@@ -5326,7 +5326,7 @@
         ]
       }
     ],
-    "T3 - Taylor": [
+    "UST3 - Taylor": [
       {
         "code": "T3113",
         "activeDays": [
@@ -5504,7 +5504,7 @@
     ],
     "megan_patterson@ryder.com": [
       "USHM - Baltimore",
-      "USI3 - Richmond"
+      "USHR - Richmond"
     ],
     "todd_varley@ryder.com": [
       "USJJ - Chester",
@@ -5556,10 +5556,11 @@
       "USHM - Baltimore",
       "USBP - Boise",
       "USJB - Butte",
+      "USJJ - Chester",
       "USHE - Denver",
       "USHZ - Mansfield",
       "USIB - Portland",
-      "USI3 - Richmond",
+      "USHR - Richmond",
       "USI4 - Rochester",
       "USID - Salt Lake City",
       "USIG - Seattle",
@@ -10201,7 +10202,7 @@
         }
       }
     },
-    "usi3richmondweek45nov2nov6": {
+    "ushrrichmondweek45nov2nov6": {
       "reporterName": "Sean Spearin",
       "records": {
         "hr201_tue": {
@@ -11227,7 +11228,7 @@
         }
       }
     },
-    "usi3richmondweek46nov9nov13": {
+    "ushrrichmondweek46nov9nov13": {
       "reporterName": "Megan Patterson",
       "records": {
         "hr201_tue": {
@@ -12116,6 +12117,130 @@
           "comments": ""
         },
         "jn504_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        }
+      }
+    },
+    "ushofortlauderdaleweek46nov9nov13": {
+      "reporterName": "Jorge Rojas",
+      "records": {
+        "ho101_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho101_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho102_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho102_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho103_mon": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho201_tue": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho301_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho301_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho302_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho302_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho303_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho304_wed": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho401_thu": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho501_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho502_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho503_fri": {
+          "status": "Covered",
+          "reasonCode": "",
+          "recoveryPlan": "",
+          "rescheduleDate": "",
+          "comments": ""
+        },
+        "ho504_fri": {
           "status": "Covered",
           "reasonCode": "",
           "recoveryPlan": "",
