@@ -19,6 +19,91 @@
     "Ryder next regular delivery",
     "CCN"
   ],
+  "reasonCodesByCarrier": {
+    "Ryder": [
+      "Driver Absence",
+      "Driver Not Available",
+      "Driver Related",
+      "Equip Unavail-Ideal",
+      "Equip Unavailable",
+      "Equipment Breakdown",
+      "Equipment Issues",
+      "Holiday Closed",
+      "Warehouse Delay",
+      "Weather Related",
+      "Other"
+    ],
+    "Phillips": [
+      "Driver Absence",
+      "Driver Not Available",
+      "Driver Related",
+      "Equip Unavail-Ideal",
+      "Equip Unavailable",
+      "Equipment Breakdown",
+      "Equipment Issues",
+      "Holiday Closed",
+      "Warehouse Delay",
+      "Weather Related",
+      "Other"
+    ]
+  },
+  "recoveryPlansByCarrier": {
+    "Ryder": [
+      "Ryder 1 day delay",
+      "Ryder 2 day delay",
+      "Ryder 3 day delay",
+      "Ryder next regular delivery",
+      "CCN"
+    ],
+    "Phillips": [
+      "Phillips 1 day delay",
+      "Phillips 2 day delay",
+      "Phillips 3 day delay",
+      "Phillips next regular delivery",
+      "CCN"
+    ]
+  },
+  "locationCarriers": {
+    "USBP - Boise": "Ryder",
+    "USG1 - Milwaukee": "Phillips",
+    "USG2 - Burnsville": "Phillips",
+    "USG3 - Dayton": "Phillips",
+    "USHA - Atlanta": "Ryder",
+    "USHB - Albuquerque": "Ryder",
+    "USHD - Dallas": "Ryder",
+    "USHE - Denver": "Ryder",
+    "USHF - Houston": "Ryder",
+    "USHG - San Antonio": "Ryder",
+    "USHI - Kansas City": "Phillips",
+    "USHJ - St Louis": "Phillips",
+    "USHK - Wichita": "Phillips",
+    "USHM - Baltimore": "Ryder",
+    "USHO - Fort Lauderdale": "Ryder",
+    "USHP - Jacksonville": "Ryder",
+    "USHR - Richmond": "Ryder",
+    "USHY - Westfield": "Ryder",
+    "USHZ - Mansfield": "Ryder",
+    "USI0 - Nashville": "Ryder",
+    "USI1 - New Orleans": "Ryder",
+    "USI4 - Rochester": "Ryder",
+    "USI5 - Tampa": "Ryder",
+    "USI6 - Anchorage": "Ryder",
+    "USI7 - Fresno": "Ryder",
+    "USIA - Phoenix": "Ryder",
+    "USIB - Portland": "Ryder",
+    "USID - Salt Lake City": "Ryder",
+    "USIF - Ontario": "Ryder",
+    "USIG - Seattle": "Ryder",
+    "USIJ - Spokane": "Ryder",
+    "USIM - Memphis": "Ryder",
+    "USIN - Mobile": "Ryder",
+    "N/A": "Ryder",
+    "USJB - Butte": "Ryder",
+    "USJJ - Chester": "Ryder",
+    "USJL - Greensboro": "Ryder",
+    "USJN - Vacaville": "Ryder",
+    "UST3 - Taylor": "Phillips"
+  },
   "allowedLocations": [
     "USBP - Boise",
     "USG1 - Milwaukee",
@@ -5482,25 +5567,9 @@
     ]
   },
   "emailLocations": {
-    "neil_williams@ryder.com": [
-      "USHB - Albuquerque",
-      "USHF - Houston",
-      "USHG - San Antonio"
-    ],
-    "edward_wakileh@ryder.com": [
-      "USI6 - Anchorage",
-      "USBP - Boise",
-      "USJB - Butte",
-      "USHE - Denver",
-      "USIB - Portland",
-      "USID - Salt Lake City",
-      "USIG - Seattle",
-      "USIJ - Spokane"
-    ],
-    "bradley_merrilees@ryder.com": [
-      "USHA - Atlanta",
-      "USIM - Memphis",
-      "USI0 - Nashville"
+    "alopes@ryder.com": [
+      "USHZ - Mansfield",
+      "USHY - Westfield"
     ],
     "megan_patterson@ryder.com": [
       "USHM - Baltimore",
@@ -5510,69 +5579,79 @@
       "USJJ - Chester",
       "USI4 - Rochester"
     ],
+    "neil_williams@ryder.com": [
+      "USHB - Albuquerque",
+      "USHG - San Antonio",
+      "USHF - Houston"
+    ],
     "chase_cronan@ryder.com": [
       "USHD - Dallas",
       "USJL - Greensboro",
-      "USIN - Mobile",
-      "USI1 - New Orleans"
+      "USI1 - New Orleans",
+      "USIN - Mobile"
+    ],
+    "bradley_merrilees@ryder.com": [
+      "USI0 - Nashville",
+      "USHA - Atlanta",
+      "USIM - Memphis"
     ],
     "jorge_rojas@ryder.com": [
+      "USI5 - Tampa",
       "USHO - Fort Lauderdale",
-      "USHP - Jacksonville",
-      "USI5 - Tampa"
+      "USHP - Jacksonville"
     ],
     "esteban_perez@ryder.com": [
-      "USI7 - Fresno",
       "USIF - Ontario",
+      "USI7 - Fresno",
       "USIA - Phoenix"
-    ],
-    "alopes@ryder.com": [
-      "USHZ - Mansfield",
-      "USHY - Westfield"
     ],
     "john_lackey@ryder.com": [
       "USJN - Vacaville"
     ],
-    "jim_greene@ryder.com": [
-      "USHB - Albuquerque",
-      "USHA - Atlanta",
-      "USHD - Dallas",
-      "USHO - Fort Lauderdale",
-      "USI7 - Fresno",
-      "USJL - Greensboro",
-      "USHF - Houston",
-      "USHP - Jacksonville",
-      "USIM - Memphis",
-      "USIN - Mobile",
-      "USI0 - Nashville",
-      "USI1 - New Orleans",
-      "USIF - Ontario",
-      "USIA - Phoenix",
-      "USHG - San Antonio",
-      "USI5 - Tampa"
-    ],
-    "sean_spearin@ryder.com": [
-      "USI6 - Anchorage",
-      "USHM - Baltimore",
-      "USBP - Boise",
-      "USJB - Butte",
-      "USJJ - Chester",
-      "USHE - Denver",
-      "USHZ - Mansfield",
-      "USIB - Portland",
-      "USHR - Richmond",
-      "USI4 - Rochester",
+    "edward_wakileh@ryder.com": [
       "USID - Salt Lake City",
+      "USHE - Denver",
+      "USI6 - Anchorage",
       "USIG - Seattle",
       "USIJ - Spokane",
+      "USBP - Boise",
+      "USJB - Butte",
+      "USIB - Portland"
+    ],
+    "sean_spearin@ryder.com": [
+      "USHZ - Mansfield",
+      "USHY - Westfield",
+      "USHM - Baltimore",
+      "USHR - Richmond",
+      "USJJ - Chester",
+      "USI4 - Rochester",
       "USJN - Vacaville",
-      "USHY - Westfield"
+      "USID - Salt Lake City",
+      "USHE - Denver",
+      "USI6 - Anchorage",
+      "USIG - Seattle",
+      "USIJ - Spokane",
+      "USBP - Boise",
+      "USJB - Butte",
+      "USIB - Portland"
     ],
-    "devon_doherty@hillspet.com": [
-      "USHI - Kansas City"
-    ],
-    "kyla_chaffee@hillspet.com": [
-      "USG1 - Milwaukee"
+    "jim_greene@ryder.com": [
+      "USHB - Albuquerque",
+      "USHG - San Antonio",
+      "USHF - Houston",
+      "USHD - Dallas",
+      "USI0 - Nashville",
+      "USHA - Atlanta",
+      "USIM - Memphis",
+      "USI5 - Tampa",
+      "USHO - Fort Lauderdale",
+      "USHP - Jacksonville",
+      "USJL - Greensboro",
+      "USI1 - New Orleans",
+      "USIN - Mobile",
+      "USIF - Ontario",
+      "USI7 - Fresno",
+      "USIA - Phoenix"
     ]
   },
   "existingSubmissions": {
